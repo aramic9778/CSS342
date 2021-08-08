@@ -1,0 +1,315 @@
+Thu Nov 19 15:31:14 PST 2020
+Linux csslab11.uwb.edu 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+uid=1109936(aram97) gid=2121109936(aram97) groups=2121109936(aram97),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+4: 9
+3: 9
+2: 5-->9
+1: 3-->5-->7-->9
+0: 1-->3-->5-->7-->9
+
+7 ? true
+3 ? true
+-100 ? false
+100 ? false
+4: 9
+3: 9
+2: 9
+1: 3-->7-->9
+0: 1-->3-->7-->9
+
+Done.
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+12118 warnings generated.
+24341 warnings generated.
+Suppressed 24341 warnings (24341 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./main.cpp
+Running clang-format on ./skiplist.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==28019== Memcheck, a memory error detector
+==28019== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28019== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==28019== Command: ./a.out
+==28019== Parent PID: 27965
+==28019== 
+==28019== 
+==28019== HEAP SUMMARY:
+==28019==     in use at exit: 0 bytes in 0 blocks
+==28019==   total heap usage: 55 allocs, 55 frees, 74,260 bytes allocated
+==28019== 
+==28019== All heap blocks were freed -- no leaks are possible
+==28019== 
+==28019== For lists of detected and suppressed errors, rerun with: -s
+==28019== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+File '/home/NETID/aram97/2020au342c-p4-skiplist-aramic9778/main.cpp':
+Name                        Regions    Miss   Cover     Lines    Miss   Cover
+-----------------------------------------------------------------------------
+test1()                           1       0 100.00%        21       0 100.00%
+main                              1       0 100.00%         7       0 100.00%
+-----------------------------------------------------------------------------
+TOTAL                             2       0 100.00%        28       0 100.00%
+
+File '/home/NETID/aram97/2020au342c-p4-skiplist-aramic9778/skiplist.cpp':
+Name                                                           Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------------------------
+operator<<(std::ostream&, SkipList const&)                          10       0 100.00%        16       0 100.00%
+SNode::SNode(int)                                                    1       0 100.00%         4       0 100.00%
+SNode::height() const                                                1       0 100.00%         1       0 100.00%
+SNode::increaseHeight()                                              1       0 100.00%         4       0 100.00%
+SkipList::SkipList(int, int)                                         4       0 100.00%        12       0 100.00%
+SkipList::shouldInsertAtHigher() const                               1       0 100.00%         3       0 100.00%
+SkipList::add(std::vector<int, std::allocator<int> > const&)         5       0 100.00%         8       0 100.00%
+SkipList::add(int)                                                   8       0 100.00%        21       0 100.00%
+SkipList::~SkipList()                                                3       0 100.00%        11       0 100.00%
+SkipList::remove(int)                                                7       0 100.00%        17       0 100.00%
+SkipList::getBeforeNodes(int) const                                  6       0 100.00%        13       0 100.00%
+SkipList::containsSNode(int) const                                  10       0 100.00%        14       0 100.00%
+SkipList::contains(int) const                                       10       0 100.00%        14       0 100.00%
+SkipList::connect2AtLevel(SNode*, SNode*, int)                       1       0 100.00%         4       0 100.00%
+SkipList::connect3AtLevel(SNode*, SNode*, SNode*, int)               1       0 100.00%         5       0 100.00%
+----------------------------------------------------------------------------------------------------------------
+TOTAL                                                               69       0 100.00%       147       0 100.00%
+/home/NETID/aram97/2020au342c-p4-skiplist-aramic9778/main.cpp:
+    1|       |#include <cassert>
+    2|       |#include <iostream>
+    3|       |
+    4|       |#include "skiplist.h"
+    5|       |
+    6|       |using namespace std;
+    7|       |
+    8|      1|void test1() {
+    9|      1|  // setting seed for easy testing
+   10|      1|  srand(10000);
+   11|      1|  SkipList skp(5, 80);
+   12|      1|  cout << boolalpha;
+   13|      1|  skp.add(3);
+   14|      1|  skp.add(5);
+   15|      1|  skp.add(vector<int>{1, 7, 9});
+   16|      1|  // cannot add existing
+   17|      1|  assert(!skp.add(vector<int>{1, 7}));
+   18|      1|  cout << skp << endl;
+   19|      1|  cout << "7 ? " << skp.contains(7) << endl;
+   20|      1|  cout << "3 ? " << skp.contains(3) << endl;
+   21|      1|  cout << "-100 ? " << skp.contains(-100) << endl;
+   22|      1|  cout << "100 ? " << skp.contains(100) << endl;
+   23|      1|  bool result = skp.remove(5);
+   24|      1|  assert(result);
+   25|      1|  result = skp.remove(5);
+   26|      1|  assert(!result);
+   27|      1|  cout << skp << endl;
+   28|      1|}
+   29|       |
+   30|      1|int main() {
+   31|      1|
+   32|      1|  test1();
+   33|      1|
+   34|      1|  cout << "Done." << endl;
+   35|      1|  return 0;
+   36|      1|}
+
+/home/NETID/aram97/2020au342c-p4-skiplist-aramic9778/skiplist.cpp:
+    1|       |//
+    2|       |// Created by Yusuf Pisan on 4/26/18.
+    3|       |//
+    4|       |
+    5|       |#include <cassert>
+    6|       |#include <climits>
+    7|       |#include <cstdlib>
+    8|       |#include <iostream>
+    9|       |
+   10|       |#include "skiplist.h"
+   11|       |
+   12|       |using namespace std;
+   13|       |
+   14|      2|ostream &operator<<(ostream &out, const SkipList &skip) {
+   15|     12|  for (int d = skip.maxLevel - 1; d >= 0; d--) {
+   16|     10|    out << d << ": ";
+   17|     10|    auto *curr = skip.head->forward[d];
+   18|     10|    if (curr != skip.tail) {
+   19|     10|      out << curr->value;
+   20|     10|      curr = curr->forward[d];
+   21|     10|    }
+   22|     23|    while (curr != nullptr && curr != skip.tail) {
+   23|     13|      out << "-->" << curr->value;
+   24|     13|      curr = curr->forward[d];
+   25|     13|    }
+   26|     10|    out << endl;
+   27|     10|  }
+   28|      2|  return out;
+   29|      2|}
+   30|       |
+   31|      7|SNode::SNode(int value) : value{value} { // clear forward and backward nodes
+   32|      7|  forward.clear();
+   33|      7|  backward.clear();
+   34|      7|}
+   35|       |
+   36|       |// how many forward/backward pointers it has
+   37|      1|int SNode::height() const { return forward.size(); }
+   38|       |
+   39|       |// increase the number of forward/backward pointers it has
+   40|     13|void SNode::increaseHeight() {
+   41|     13|  forward.push_back(nullptr);  // pointer from the front
+   42|     13|  backward.push_back(nullptr); // pointer from the back
+   43|     13|}
+   44|       |
+   45|       |SkipList::SkipList(int maxLevel, int probability)
+   46|      1|    : maxLevel{maxLevel}, probability{probability} {
+   47|      1|  assert(maxLevel > 0 && probability >= 0 &&
+   48|      1|         probability < 100); // if probability and max level legit go ahead
+   49|      1|  head = new SNode(INT_MIN); // INT_MIN for head
+   50|      1|  tail = new SNode(INT_MAX); // INT_MAX for tail
+   51|      6|  for (int i = 0; i < maxLevel; i++) { // lop for all levels
+   52|      5|    head->forward.push_back(tail);     // link head with tail
+   53|      5|    head->backward.push_back(nullptr); // link head with backward pointer
+   54|      5|    tail->forward.push_back(nullptr);  // link tail with forward pointer
+   55|      5|    tail->backward.push_back(head);    // link tail with head
+   56|      5|  }
+   57|      1|}
+   58|       |
+   59|     13|bool SkipList::shouldInsertAtHigher() const {
+   60|     13|  return rand() % 100 < probability;
+   61|     13|}
+   62|       |
+   63|      2|bool SkipList::add(const vector<int> &values) {
+   64|      4|  for (auto v : values) { // for all values in vector of Nodes
+   65|      4|    if (!add(v)) {
+   66|      1|      return false; // false if couldn't add
+   67|      1|    }
+   68|      4|  }
+   69|      2|  return true; // true if added
+   70|      2|}
+   71|       |
+   72|      6|bool SkipList::add(int value) {
+   73|      6|  SNode *ptr = containsSNode(value); // create a node with value from argument
+   74|      6|  if (ptr != nullptr) { // return false if this node exist in skiplist
+   75|      1|    return false;
+   76|      1|  }
+   77|      5|  vector<SNode *> before =
+   78|      5|      getBeforeNodes(value); // create vector of Snodes which shows nodes before
+   79|      5|  int lvl = 0;
+   80|      5|  auto newnode = new SNode(value); // create new node with value
+   81|     13|  do {                             //
+   82|     13|    newnode->increaseHeight();     // increase height of level
+   83|     13|    SNode *b = before[lvl];
+   84|     13|    SNode *d = before[lvl]->forward[lvl];
+   85|     13|    connect3AtLevel(b, newnode, d,
+   86|     13|                    lvl); // connect backward, newnode and forward
+   87|     13|    lvl++;                // increase level
+   88|     13|  } while (shouldInsertAtHigher() &&
+   89|     13|           lvl < maxLevel); // while possible to add levels
+   90|      5|
+   91|      5|  return true;
+   92|      5|}
+   93|       |
+   94|      1|SkipList::~SkipList() {
+   95|      1|  // need to delete individual nodes
+   96|      1|  SNode *ptr = head;               // create new Node which refer to head
+   97|      7|  while (ptr != nullptr) {         // while node address doesn't equal nullptr
+   98|      6|    SNode *next = ptr->forward[0]; // next equals forward pointer
+   99|      6|    ptr->forward.clear();          // clear forward
+  100|      6|    ptr->backward.clear();         // clear backward
+  101|      6|    delete ptr;                    // delete memory location
+  102|      6|    ptr = next;                    // assign next to pointer
+  103|      6|  }
+  104|      1|}
+  105|       |
+  106|      2|bool SkipList::remove(int data) {
+  107|      2|  SNode *ptr = containsSNode(
+  108|      2|      data); // using method containsNode to check if list has this value
+  109|      2|  if (ptr == nullptr) { // if not return false
+  110|      1|    return false;
+  111|      1|  }
+  112|      1|  int levels = ptr->height();              // get a number of levels
+  113|      4|  for (int lvl = 0; lvl < levels; lvl++) { // for all levels loop
+  114|      3|    SNode *b = ptr->backward[lvl];         // taking a link of backward node
+  115|      3|    SNode *d = ptr->forward[lvl];          // taking a link of forward node
+  116|      3|    connect2AtLevel(b, d, lvl);            // connect backward and forward nodes
+  117|      3|  }
+  118|      1|  ptr->backward.clear(); // clear backward address
+  119|      1|  ptr->forward.clear();  // clear forward address
+  120|      1|  delete ptr;            // delete memory location of pointer
+  121|      1|  return true;
+  122|      1|}
+  123|       |
+  124|       |// get the node that would be before this data
+  125|       |// at level-0
+  126|      5|vector<SNode *> SkipList::getBeforeNodes(int data) const {
+  127|      5|  vector<SNode *> v(maxLevel);
+  128|     30|  for (int i = maxLevel - 1; i >= 0;
+  129|     25|       i--) { // loop for all level from higher to lower
+  130|     25|    SNode *ptr = head;
+  131|     41|    while (ptr->forward[i]->value <
+  132|     41|           data) {           // while node' s forward value less than data
+  133|     16|      ptr = ptr->forward[i]; // go forward
+  134|     16|    }
+  135|     25|    v[i] = ptr; // write node to vector
+  136|     25|  }
+  137|      5|  return v; // return vector with all nodes before
+  138|      5|}
+  139|       |
+  140|      8|SNode *SkipList::containsSNode(int data) const {
+  141|      8|  SNode *ptr = head; // create new Node which refer to head
+  142|     44|  for (int lvl = maxLevel - 1; lvl >= 0;
+  143|     38|       lvl--) { // loop for all level from higher to lower
+  144|     43|    while (ptr->forward[lvl]->value <=
+  145|     43|           data) { // while node' s forward value less or equal than data
+  146|      7|      if (ptr->forward[lvl]->value == data) { // if equals return node
+  147|      2|        return ptr->forward[lvl];
+  148|      2|      }
+  149|      5|      ptr = ptr->forward[lvl]; // next node
+  150|      5|    }
+  151|     38|  }
+  152|      8|  return nullptr; // return nullptr if didn't find
+  153|      8|}
+  154|       |
+  155|      4|bool SkipList::contains(int data) const {
+  156|      4|  SNode *ptr = head; // create new Node which refer to head
+  157|     20|  for (int lvl = maxLevel - 1; lvl >= 0;
+  158|     18|       lvl--) { // loop for all level from higher to lower
+  159|     20|    while (ptr->forward[lvl]->value <=
+  160|     20|           data) { // while node' s forward value less or equal than data
+  161|      4|      if (ptr->forward[lvl]->value == data) { // if equals return true
+  162|      2|        return true;
+  163|      2|      }
+  164|      2|      ptr = ptr->forward[lvl]; // next node
+  165|      2|    }
+  166|     18|  }
+  167|      4|  return false; // return false if didn't find
+  168|      4|}
+  169|       |
+  170|     29|void SkipList::connect2AtLevel(SNode *a, SNode *b, int level) {
+  171|     29|  a->forward[level] = b;  // connect forward link of a to b
+  172|     29|  b->backward[level] = a; // connect forward link of a to b
+  173|     29|}
+  174|       |
+  175|     13|void SkipList::connect3AtLevel(SNode *a, SNode *b, SNode *c, int level) {
+  176|     13|  connect2AtLevel(a, b, level);
+  177|     13|  connect2AtLevel(b, c,
+  178|     13|                  level); // connceting 3 nodes by using connect2AtLevel method
+  179|     13|}
+
+Thu Nov 19 15:31:28 PST 2020
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
