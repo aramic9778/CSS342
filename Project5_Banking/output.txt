@@ -1,0 +1,715 @@
+Wed Dec  9 15:06:49 PST 2020
+Linux csslab11.uwb.edu 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+uid=1109936(aram97) gid=2121109936(aram97) groups=2121109936(aram97),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+The command line argument(s) was testfile.txt
+Wrong ID pattern. Suppose to be 4 digit
+Displaying Transaction History for Josh Goldberg's 500 Index Fund: $0
+Account 1232 not found!
+Account 4423 not found!
+Account 12343 not found!
+Displaying Transaction History for Josh Goldberg by fund.
+ Money Market: $3345
+       D 34240 3345
+ Prime Money Market: $6230
+       D 34241 6230
+ Long-Term Bond: $0
+       D 34242 3345
+       W 34242 6000 Covered
+       D 34242 2655 Cover
+ Short-Term Bond: $3575
+       D 34243 6230
+       T 34243 2655 34242
+ 500 Index Fund: $0
+ Capital Value Fund: $0
+ Growth Equlty Fund: $0
+ Growth Index Fund: $0
+ Value Fund: $0
+ Value Stock Index: $0
+Displaying Transaction History for Josh Goldberg by fund.
+ Money Market: $3345
+       D 34240 3345
+       W 34240 16000 (Failed)
+ Prime Money Market: $6230
+       D 34241 6230
+ Long-Term Bond: $0
+       D 34242 3345
+       W 34242 6000 Covered
+       D 34242 2655 Cover
+ Short-Term Bond: $3575
+       D 34243 6230
+       T 34243 2655 34242
+ 500 Index Fund: $0
+ Capital Value Fund: $0
+ Growth Equlty Fund: $0
+ Growth Index Fund: $0
+ Value Fund: $0
+ Value Stock Index: $0
+Displaying Transaction History for Josh Goldberg by fund.
+ Money Market: $2275
+       D 34240 3345
+       W 34240 16000 (Failed)
+       T 34240 1070 34241
+ Prime Money Market: $0
+       D 34241 6230
+       W 34241 7300 Covered
+       D 34241 1070 Cover
+ Long-Term Bond: $0
+       D 34242 3345
+       W 34242 6000 Covered
+       D 34242 2655 Cover
+ Short-Term Bond: $3575
+       D 34243 6230
+       T 34243 2655 34242
+ 500 Index Fund: $0
+ Capital Value Fund: $0
+ Growth Equlty Fund: $0
+ Growth Index Fund: $0
+ Value Fund: $0
+ Value Stock Index: $0
+Displaying Transaction History for Josh Goldberg's 500 Index Fund: $0
+Displaying Transaction History for Michael Jackson's Value Fund: $0
+Displaying Transaction History for Michael Jackson by fund.
+ Money Market: $0
+ Prime Money Market: $0
+       D 34241 4000
+ Long-Term Bond: $3344
+       D 76382 3344
+ Short-Term Bond: $6232
+       D 76383 6232
+       W 76383 10000 (Failed)
+ 500 Index Fund: $0
+ Capital Value Fund: $5200
+       D 76385 9200
+       T 76385 4000 34241
+       T 76385 50001 76382 (Failed)
+ Growth Equlty Fund: $0
+ Growth Index Fund: $0
+ Value Fund: $0
+ Value Stock Index: $0
+ERROR: Could not find Account 7638512 Transfer cancelled.
+Account 3213 not found!
+Account 321342 not found!
+Account 7638123 not found!
+Account 5234 not found!
+Account 9224 not found!
+Displaying Transaction History for Michael Jackson by fund.
+ Money Market: $1221
+       D 76380 1221
+ Prime Money Market: $1220
+       D 34241 4000
+       D 76381 1220
+ Long-Term Bond: $3344
+       D 76382 3344
+ Short-Term Bond: $6232
+       D 76383 6232
+       W 76383 10000 (Failed)
+ 500 Index Fund: $0
+ Capital Value Fund: $5200
+       D 76385 9200
+       T 76385 4000 34241
+       T 76385 50001 76382 (Failed)
+ Growth Equlty Fund: $0
+ Growth Index Fund: $0
+ Value Fund: $0
+ Value Stock Index: $0
+Displaying Transaction History for Andrew McGregor by fund.
+ Money Market: $470
+       D 35430 543
+       W 35430 73
+ Prime Money Market: $3066
+       D 35431 1523
+       D 35431 1543
+ Long-Term Bond: $10708
+       D 35432 5244
+       D 35432 5464
+ Short-Term Bond: $14657
+       D 35433 7423
+       D 35433 7234
+ 500 Index Fund: $0
+ Capital Value Fund: $55
+       D 35435 55
+ Growth Equlty Fund: $14748
+       D 35436 7234
+       D 35436 7576
+       W 35436 62
+ Growth Index Fund: $10187
+       D 35437 5342
+       D 35437 6543
+       W 35437 1643
+       T 35437 55 35435
+       W 35437 20000 (Failed)
+ Value Fund: $0
+ Value Stock Index: $0
+Displaying Transaction History for Williams Hank's Short-Term Bond: $10000
+       D 12533 10000
+Displaying Transaction History for Williams Hank by fund.
+ Money Market: $10000
+       D 12530 10000
+ Prime Money Market: $10000
+       D 12531 10000
+ Long-Term Bond: $0
+       D 12532 10000
+       W 12532 10000
+ Short-Term Bond: $5000
+       D 12533 10000
+       W 12533 5000
+ 500 Index Fund: $10000
+       D 12534 10000
+ Capital Value Fund: $10000
+       D 12535 10000
+ Growth Equlty Fund: $10000
+       D 12536 10000
+ Growth Index Fund: $10000
+       D 12537 10000
+ Value Fund: $10000
+       D 12538 10000
+ Value Stock Index: $10000
+       D 12539 10000
+ERROR: Could not find Account 4356 Transfer cancelled.
+ERROR: Account 9876 is already open. Transaction refused.
+
+Processing Done. Final Balances.
+Williams Hank Account ID: 1253
+        Money Market: $10000
+        Prime Money Market: $10000
+        Long-Term Bond: $0
+        Short-Term Bond: $5000
+        500 Index Fund: $10000
+        Capital Value Fund: $10000
+        Growth Equlty Fund: $10000
+        Growth Index Fund: $10000
+        Value Fund: $10000
+        Value Stock Index: $10000
+
+Josh Goldberg Account ID: 3424
+        Money Market: $2275
+        Prime Money Market: $4000
+        Long-Term Bond: $0
+        Short-Term Bond: $3575
+        500 Index Fund: $0
+        Capital Value Fund: $0
+        Growth Equlty Fund: $0
+        Growth Index Fund: $0
+        Value Fund: $0
+        Value Stock Index: $0
+
+Andrew McGregor Account ID: 3543
+        Money Market: $470
+        Prime Money Market: $3066
+        Long-Term Bond: $10708
+        Short-Term Bond: $14657
+        500 Index Fund: $0
+        Capital Value Fund: $55
+        Growth Equlty Fund: $14748
+        Growth Index Fund: $10187
+        Value Fund: $0
+        Value Stock Index: $0
+
+Salma Cruz Account ID: 5353
+        Money Market: $0
+        Prime Money Market: $0
+        Long-Term Bond: $0
+        Short-Term Bond: $0
+        500 Index Fund: $0
+        Capital Value Fund: $0
+        Growth Equlty Fund: $0
+        Growth Index Fund: $0
+        Value Fund: $0
+        Value Stock Index: $0
+
+Michael Jackson Account ID: 7638
+        Money Market: $1221
+        Prime Money Market: $1220
+        Long-Term Bond: $3344
+        Short-Term Bond: $6232
+        500 Index Fund: $0
+        Capital Value Fund: $5200
+        Growth Equlty Fund: $0
+        Growth Index Fund: $0
+        Value Fund: $0
+        Value Stock Index: $0
+
+Nelson Willie Account ID: 9876
+        Money Market: $0
+        Prime Money Market: $0
+        Long-Term Bond: $0
+        Short-Term Bond: $0
+        500 Index Fund: $0
+        Capital Value Fund: $0
+        Growth Equlty Fund: $0
+        Growth Index Fund: $0
+        Value Fund: $0
+        Value Stock Index: $0
+
+The command line argument(s) was badfile.txt
+Unable to open file: badfile.txt
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+11199 warnings generated.
+25992 warnings generated.
+37146 warnings generated.
+48297 warnings generated.
+Suppressed 48297 warnings (48297 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./account.cpp
+Running clang-format on ./bank.cpp
+Running clang-format on ./bstree.cpp
+Running clang-format on ./main.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+Unable to open file: badfile.txt
+==2963== Memcheck, a memory error detector
+==2963== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2963== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2963== Command: ./a.out testfile.txt badfile.txt
+==2963== Parent PID: 2861
+==2963== 
+==2963== 
+==2963== HEAP SUMMARY:
+==2963==     in use at exit: 0 bytes in 0 blocks
+==2963==   total heap usage: 246 allocs, 246 frees, 134,878 bytes allocated
+==2963== 
+==2963== All heap blocks were freed -- no leaks are possible
+==2963== 
+==2963== For lists of detected and suppressed errors, rerun with: -s
+==2963== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+File '/home/NETID/aram97/2020au342c-p5-banking-aramic9778/account.cpp':
+Name                                           Regions    Miss   Cover     Lines    Miss   Cover
+------------------------------------------------------------------------------------------------
+Account::Account(int, std::string)                   4       0 100.00%        17       0 100.00%
+Account::getID()                                     1       0 100.00%         1       0 100.00%
+Account::getName()                                   1       0 100.00%         1       0 100.00%
+Account::getFund(int)                                1       0 100.00%         3       0 100.00%
+Account::getFundName(int)                            1       0 100.00%         3       0 100.00%
+Account::addFund(int, int)                           1       0 100.00%         4       0 100.00%
+Account::addHistory(std::string const&, int)         1       0 100.00%         3       0 100.00%
+Account::ifEnough(int, int)                          1       0 100.00%         3       0 100.00%
+Account::getHistory(int)                             7       0 100.00%        14       0 100.00%
+------------------------------------------------------------------------------------------------
+TOTAL                                               18       0 100.00%        49       0 100.00%
+
+File '/home/NETID/aram97/2020au342c-p5-banking-aramic9778/bank.cpp':
+Name                                               Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------------
+Bank::processTransactionFile(std::string const&)        16       0 100.00%        53       0 100.00%
+Bank::openAccount(std::string, int)                      9       0 100.00%        14       0 100.00%
+Bank::deposit(int, int, int)                             4       0 100.00%        11       0 100.00%
+Bank::withdraw(int, int, int)                           33       0 100.00%        68       0 100.00%
+Bank::transfer(int, int, int, int, int)                 10       0 100.00%        34       0 100.00%
+Bank::history(int, int)                                  4       0 100.00%        11       0 100.00%
+----------------------------------------------------------------------------------------------------
+TOTAL                                                   76       0 100.00%       191       0 100.00%
+
+File '/home/NETID/aram97/2020au342c-p5-banking-aramic9778/bstree.cpp':
+Name                                               Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------------
+Node::Node(Account*)                                     1       0 100.00%         1       0 100.00%
+BSTree::BSTree()                                         1       0 100.00%         1       0 100.00%
+BSTree::~BSTree()                                        1       0 100.00%         1       0 100.00%
+BSTree::insert(Account*)                                 1       0 100.00%         3       0 100.00%
+BSTree::insertHelper(Node*&, Account*)                  10       0 100.00%        15       0 100.00%
+BSTree::retrieve(int const&, Account*&) const           10       0 100.00%        15       0 100.00%
+BSTree::display() const                                  1       0 100.00%         1       0 100.00%
+BSTree::displayHelper(Node*) const                       9       0 100.00%        16       0 100.00%
+BSTree::clear()                                          1       0 100.00%         1       0 100.00%
+BSTree::clearHelper(Node*)                               3       0 100.00%         8       0 100.00%
+----------------------------------------------------------------------------------------------------
+TOTAL                                                   38       0 100.00%        62       0 100.00%
+
+File '/home/NETID/aram97/2020au342c-p5-banking-aramic9778/main.cpp':
+Name                                               Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------------
+main                                                     4       0 100.00%        11       0 100.00%
+----------------------------------------------------------------------------------------------------
+TOTAL                                                    4       0 100.00%        11       0 100.00%
+/home/NETID/aram97/2020au342c-p5-banking-aramic9778/account.cpp:
+    1|       |#include "account.h"
+    2|       |#include <iostream>
+    3|       |#include <string>
+    4|      7|Account::Account(int id, string name) { // account construcitr
+    5|      7|  this->ID = id;
+    6|      7|  this->name = std::move(name);
+    7|     77|  for (int i = 0; i < 10; i++) {
+    8|     70|    fundtype->amount = 0; // set amount to 0 for all funds
+    9|     70|  }
+   10|      7|  fundtype[0].name = "Money Market";
+   11|      7|  fundtype[1].name = "Prime Money Market";
+   12|      7|  fundtype[2].name = "Long-Term Bond";
+   13|      7|  fundtype[3].name = "Short-Term Bond";
+   14|      7|  fundtype[4].name = "500 Index Fund";
+   15|      7|  fundtype[5].name = "Capital Value Fund";
+   16|      7|  fundtype[6].name = "Growth Equlty Fund";
+   17|      7|  fundtype[7].name = "Growth Index Fund";
+   18|      7|  fundtype[8].name = "Value Fund";
+   19|      7|  fundtype[9].name = "Value Stock Index"; // all fund names
+   20|      7|}
+   21|     46|int Account::getID() { return ID; }        // get account ID
+   22|     11|string Account::getName() { return name; } // get Name
+   23|    140|int Account::getFund(int fundID) {
+   24|    140|  return fundtype[fundID].amount;
+   25|    140|} // get Fund amount
+   26|    134|string Account::getFundName(int fundID) {
+   27|    134|  return fundtype[fundID].name;
+   28|    134|} // get fund name
+   29|     43|bool Account::addFund(int fundID, int amount) { // add fund
+   30|     43|  fundtype[fundID].amount += amount;
+   31|     43|  return true;
+   32|     43|}
+   33|     50|void Account::addHistory(const string &his, int fundID) { // add history to fund
+   34|     50|  fundtype[fundID].history << "       " << his << endl;
+   35|     50|}
+   36|     34|bool Account::ifEnough(int money, int fT) { // check if Enough money
+   37|     34|  return fundtype[fT].amount >= money;
+   38|     34|}
+   39|     11|void Account::getHistory(int fundID) { // get history
+   40|     11|  if (fundID == -1) {                  // for all funds
+   41|      7|    cout << "Displaying Transaction History for " << getName() << " by fund."
+   42|      7|         << endl;
+   43|     77|    for (int i = 0; i < 10; i++) {
+   44|     70|      cout << " " << getFundName(i) << ": $" << getFund(i) << endl;
+   45|     70|      cout << fundtype[i].history.str();
+   46|     70|    }
+   47|      7|  } else { // for one particular fund
+   48|      4|    cout << "Displaying Transaction History for " << getName() << "'s "
+   49|      4|         << getFundName(fundID) << ": $" << getFund(fundID) << endl;
+   50|      4|    cout << fundtype[fundID].history.str();
+   51|      4|  }
+   52|     11|}
+
+/home/NETID/aram97/2020au342c-p5-banking-aramic9778/bank.cpp:
+    1|       |#include "bank.h"
+    2|       |#include <fstream>
+    3|       |#include <queue>
+    4|       |using namespace std;
+    5|       |
+    6|      2|void Bank::processTransactionFile(const string &fileName) {
+    7|      2|  ifstream inFile;
+    8|      2|  queue<string> tran; // queue to store transactions
+    9|      2|  string arg;
+   10|      2|  string fname, lname;
+   11|      2|  int fT = -1;
+   12|      2|  inFile.open(fileName); // opening file
+   13|      2|  if (!inFile) {
+   14|      1|    cerr << "Unable to open file: " << fileName << endl;
+   15|      1|    return;
+   16|      1|  }
+   17|     74|  while (!inFile.eof()) { // while not end of file add each transaction in queue
+   18|     73|    getline(inFile, arg);
+   19|     73|    tran.push(arg);
+   20|     73|  }
+   21|      1|  int uid, amount, tuid;
+   22|      1|  while (
+   23|     74|      !tran.empty()) { // while queue is not empty take by one each transaction
+   24|     73|    stringstream ss(tran.front());
+   25|     73|    tran.pop();
+   26|     73|    ss >> arg;
+   27|     73|    switch (arg[0]) {
+   28|     73|    case 'O': // open account function
+   29|      8|      ss >> fname >> lname >> uid;
+   30|      8|      openAccount(fname += " " + lname, uid);
+   31|      8|      break;
+   32|     73|    case 'D':
+   33|     32|      ss >> uid >> amount; // deposit function
+   34|     32|      deposit(uid / 10, amount, uid % 10);
+   35|     32|      break;
+   36|     73|    case 'W': // withdraw function
+   37|     13|      ss >> uid >> amount;
+   38|     13|      withdraw(uid / 10, amount, uid % 10);
+   39|     13|      break;
+   40|     73|    case 'H': // history function
+   41|     14|      ss >> uid;
+   42|     14|      if (uid > 9999) {
+   43|      6|        uid = uid / 10;
+   44|      6|        fT = uid % 10;
+   45|      6|      }
+   46|     14|      history(uid, fT);
+   47|     14|      fT = -1;
+   48|     14|      break;
+   49|     73|    case 'T': // transfer function
+   50|      6|      ss >> uid >> amount >> tuid;
+   51|      6|      transfer(uid / 10, tuid / 10, amount, uid % 10, tuid % 10);
+   52|      6|      break;
+   53|     73|    }
+   54|     73|  }
+   55|      1|  cout << endl;
+   56|      1|  cout << "Processing Done. Final Balances." << endl;
+   57|      1|  accounts.display(); // display information about all accounts at the end
+   58|      1|}
+   59|       |
+   60|      8|bool Bank::openAccount(string name, int id) {
+   61|      8|  if (id > 9999 || id < 1000) { // if id number not sufficient return a false
+   62|      1|    cout << "Wrong ID pattern. Suppose to be 4 digit" << endl;
+   63|      1|    return false;
+   64|      1|  }
+   65|      7|  Account *acc = new Account(id, move(name)); // create new account
+   66|      7|  if (!accounts.insert(acc)) {
+   67|      1|    cout << "ERROR: Account " << id << " is already open. Transaction refused."
+   68|      1|         << endl; // if account exist print a error message
+   69|      1|    delete acc;   // get rid of memory leak
+   70|      1|    return false;
+   71|      1|  }
+   72|      6|  return true;
+   73|      6|}
+   74|       |
+   75|     32|bool Bank::deposit(int id, int amount, int fundType) {
+   76|     32|  Account *acc = nullptr;
+   77|     32|  string h = "D " + to_string(id * 10 + fundType) + " " + to_string(amount);
+   78|     32|  if (!accounts.retrieve(id, acc)) { // edge case if account not found
+   79|      2|    cout << "Account " + to_string(id) + " not found!" << endl;
+   80|      2|    return false;
+   81|      2|  }
+   82|     30|  acc->addFund(fundType, amount); // process a transaction
+   83|     30|  acc->addHistory(h, fundType);   // add transaction to history
+   84|     30|  return true;
+   85|     30|}
+   86|       |
+   87|       |// withdaw asset from a fund
+   88|     13|bool Bank::withdraw(int id, int amount, int fundType) {
+   89|     13|  Account *acc = nullptr;
+   90|     13|  if (!accounts.retrieve(id, acc)) { // edge case if account not found
+   91|      3|    cout << "Account " + to_string(id) + " not found!" << endl;
+   92|      3|    return false;
+   93|      3|  }
+   94|     10|  string h = "W " + to_string(id * 10 + fundType) + " " +
+   95|     10|             to_string(amount); // string pattern for history
+   96|     10|
+   97|     10|  if (!acc->ifEnough(amount, fundType) && (fundType > 3)) {
+   98|      1|    acc->addHistory(
+   99|      1|        h + " (Failed)",
+  100|      1|        fundType); // add (Failed) if fundtype from 4 to 9 and not enough money
+  101|      1|    return false;
+  102|      1|  }
+  103|      9|
+  104|      9|  if (!acc->ifEnough(amount, fundType) &&
+  105|      9|      (fundType == 1 || fundType == 0)) { // if not enough money and fundtype
+  106|      2|                                          // money market or prime money market
+  107|      2|    int cover = (fundType == 0) ? 1 : 0;  // variable for cover fundtype
+  108|      2|    int remainder = amount - acc->getFund(fundType); // how much left to cover
+  109|      2|    if (acc->ifEnough(remainder, cover)) {           // if Enough to cover
+  110|      1|      int removed = acc->getFund(fundType);
+  111|      1|      acc->addFund(fundType, -removed); // remove from main fundtype
+  112|      1|      acc->addFund(cover, -remainder);  // remove from cover fundtype
+  113|      1|      acc->addHistory("W " + to_string(id * 10 + fundType) + " " +
+  114|      1|                          to_string(amount) + " Covered",
+  115|      1|                      fundType);
+  116|      1|      acc->addHistory("D " + to_string(id * 10 + fundType) + " " +
+  117|      1|                          to_string(remainder) + " Cover",
+  118|      1|                      fundType);
+  119|      1|      acc->addHistory(
+  120|      1|          "T " + to_string(id * 10 + cover) + " " + to_string(remainder) + " " +
+  121|      1|              to_string(id * 10 + fundType), // transfer hisotry from cover
+  122|      1|          cover);
+  123|      1|      return true;
+  124|      1|    }
+  125|      1|    acc->addHistory(h + " (Failed)",
+  126|      1|                    fundType); // if not Enough even in cover fundtype
+  127|      1|    return false;
+  128|      1|  }
+  129|      7|  if (!acc->ifEnough(amount, fundType) &&
+  130|      7|      (fundType == 2 || fundType == 3)) { // the same case for Bonds
+  131|      2|    int cover = (fundType == 2) ? 3 : 2;
+  132|      2|    int remainder = amount - acc->getFund(fundType);
+  133|      2|    if (acc->ifEnough(remainder, cover)) {
+  134|      1|      int removed = acc->getFund(fundType);
+  135|      1|      acc->addFund(fundType, -removed);
+  136|      1|      acc->addFund(cover, -remainder);
+  137|      1|      acc->addHistory("W " + to_string(id * 10 + fundType) + " " +
+  138|      1|                          to_string(amount) + " Covered",
+  139|      1|                      fundType);
+  140|      1|      acc->addHistory("D " + to_string(id * 10 + fundType) + " " +
+  141|      1|                          to_string(remainder) + " Cover",
+  142|      1|                      fundType);
+  143|      1|      acc->addHistory("T " + to_string(id * 10 + cover) + " " +
+  144|      1|                          to_string(remainder) + " " +
+  145|      1|                          to_string(id * 10 + fundType),
+  146|      1|                      cover);
+  147|      1|      return true;
+  148|      1|    }
+  149|      1|    acc->addHistory(h + " (Failed)", fundType);
+  150|      1|    return false;
+  151|      1|  }
+  152|      5|  acc->addFund(fundType, -amount);
+  153|      5|  acc->addHistory(h, fundType);
+  154|      5|  return true;
+  155|      5|}
+  156|       |
+  157|       |// transfer assets between fund (can be funds owned by a single client or
+  158|       |// transfers between clients)
+  159|       |bool Bank::transfer(int sourceID, int targetID, int amount, int fundType,
+  160|      6|                    int fundType2) {
+  161|      6|  Account *acc = nullptr;  // source account
+  162|      6|  Account *acc2 = nullptr; // target account
+  163|      6|  if (!accounts.retrieve(sourceID,
+  164|      6|                         acc)) { // edge case if source account not found
+  165|      1|    cout << "ERROR: Could not find Account " + to_string(sourceID) +
+  166|      1|                " Transfer cancelled."
+  167|      1|         << endl;
+  168|      1|    return false;
+  169|      1|  }
+  170|      5|  if (!accounts.retrieve(targetID,
+  171|      5|                         acc2)) { // edge case if target account not found
+  172|      1|    cout << "ERROR: Could not find Account " + to_string(targetID) +
+  173|      1|                " Transfer cancelled."
+  174|      1|         << endl;
+  175|      1|    return false;
+  176|      1|  }
+  177|      4|  if (!acc->ifEnough(amount, fundType)) { // case if not enough money
+  178|      2|    string h = "T " + to_string(sourceID * 10 + fundType) + " " +
+  179|      2|               to_string(amount) + " " + to_string(targetID * 10 + fundType2) +
+  180|      2|               " (Failed)";
+  181|      2|    acc->addHistory(h, fundType); // add history
+  182|      2|    return false;
+  183|      2|  }
+  184|      2|  string h = "T " + to_string(sourceID * 10 + fundType) + " " +
+  185|      2|             to_string(amount) + " " + to_string(targetID * 10 + fundType2); //
+  186|      2|  acc->addFund(fundType, -amount);  // remove fund
+  187|      2|  acc2->addFund(fundType2, amount); // add fund
+  188|      2|  acc->addHistory(h, fundType);     // add transfer history
+  189|      2|  h = "D " + to_string(targetID * 10 + fundType2) + " " + to_string(amount);
+  190|      2|  acc->addHistory(h, fundType2); // add deposit history for the target
+  191|      2|
+  192|      2|  return true;
+  193|      2|}
+  194|       |
+  195|       |// diplay a single fund history or all types of funds' transiation histories.
+  196|     14|bool Bank::history(int id, int fundType) {
+  197|     14|  Account *acc = nullptr;
+  198|     14|  if (!accounts.retrieve(id, acc)) { // edge case if account not found
+  199|      3|    cout << "Account " + to_string(id) + " not found!" << endl;
+  200|      3|    return false;
+  201|      3|  }
+  202|     11|
+  203|     11|  acc->getHistory(fundType); // get history either for particular fund or for
+  204|     11|                             // the whole account
+  205|     11|  return true;
+  206|     11|}
+
+/home/NETID/aram97/2020au342c-p5-banking-aramic9778/bstree.cpp:
+    1|       |#include "bstree.h"
+    2|       |#include <string>
+    3|       |
+    4|       |using namespace std;
+    5|       |
+    6|      6|Node::Node(Account *acc) : account{acc}, left{nullptr}, right{nullptr} {}
+    7|       |
+    8|       |// Create BST
+    9|      1|BSTree::BSTree() { root = nullptr; } // default constructor
+   10|       |
+   11|       |// Delete all nodes in BST
+   12|      1|BSTree::~BSTree() { clear(); } // destructor
+   13|       |
+   14|       |// Insert new account
+   15|      7|bool BSTree::insert(Account *account) {
+   16|      7|  return insertHelper(root, account);
+   17|      7|} // insert an acount to BSTree
+   18|       |
+   19|       |// Insert recursive helper
+   20|     18|bool BSTree::insertHelper(Node *&root, Account *account) {
+   21|     18|  if (root == nullptr) {
+   22|      6|    root = new Node(account);
+   23|      6|    return true;
+   24|      6|  }
+   25|     12|  if (root->account->getID() ==
+   26|     12|      account->getID()) { // if ID equals unable to insert
+   27|      1|    return false;
+   28|      1|  }
+   29|     11|
+   30|     11|  if (root->account->getID() > account->getID()) { // sort all account by ID
+   31|      4|    return insertHelper(root->left, account);
+   32|      4|  }
+   33|      7|  return insertHelper(root->right, account);
+   34|      7|}
+   35|       |
+   36|       |// Retrieve account
+   37|       |// returns true if successful AND *Account points to account
+   38|     70|bool BSTree::retrieve(const int &accountNumber, Account *&account) const {
+   39|     70|  Node *curr = root;
+   40|    176|  while (curr != nullptr) {
+   41|    166|    if (curr->account->ID == accountNumber) { // if ID equals retirve
+   42|     60|      account = curr->account;
+   43|     60|      return true;
+   44|     60|    }
+   45|    106|    if (curr->account->ID > accountNumber) { // follow the BSTree
+   46|     59|      curr = curr->left;
+   47|     59|    } else {
+   48|     47|      curr = curr->right;
+   49|     47|    }
+   50|    106|  }
+   51|     70|  return false;
+   52|     70|}
+   53|       |
+   54|       |// Display information on all accounts
+   55|      1|void BSTree::display() const { displayHelper(root); } // display all acounts
+   56|       |// Display recursive helper
+   57|     13|void BSTree::displayHelper(Node *root) const {
+   58|     13|  if (root == nullptr) {
+   59|      7|    return;
+   60|      7|  } // if empty return
+   61|      6|  displayHelper(root->left);
+   62|      6|  cout << root->account->name << " Account ID: " << root->account->ID
+   63|      6|       << endl;                  // first line with account ID
+   64|     66|  for (int i = 0; i < 10; i++) { // print all fundtypes
+   65|     60|    cout << "        " << root->account->getFundName(i) << ": $"
+   66|     60|         << root->account->getFund(i) << endl;
+   67|     60|    if (i == 9) {
+   68|      6|      cout << endl;
+   69|      6|    } // skipp the line after last fund
+   70|     60|  }
+   71|      6|  displayHelper(root->right);
+   72|      6|}
+   73|       |
+   74|       |// delete all information in AccountTree
+   75|      1|void BSTree::clear() { clearHelper(root); } // clear all accounts
+   76|       |// clear recursive helper
+   77|     13|void BSTree::clearHelper(Node *root) { // delete all nodes
+   78|     13|  if (root != nullptr) {
+   79|      6|    clearHelper(root->left);
+   80|      6|    clearHelper(root->right);
+   81|      6|    delete root->account;
+   82|      6|    delete root;
+   83|      6|  }
+   84|     13|}
+
+/home/NETID/aram97/2020au342c-p5-banking-aramic9778/main.cpp:
+    1|       |
+    2|       |#include "bank.h"
+    3|       |#include <iostream>
+    4|       |#include <string>
+    5|       |
+    6|       |using namespace std;
+    7|       |
+    8|      1|int main(int argc, char *argv[]) {
+    9|      1|  Bank bank;
+   10|      1|  // Note that tests were done in BankTransIn.txt
+   11|      3|  for (int i = 1; i < argc; ++i) {
+   12|      2|    cout << "The command line argument(s) was " << argv[i] << std::endl;
+   13|      2|    string fileName = argv[i];
+   14|      2|    bank.processTransactionFile(fileName);
+   15|      2|  }
+   16|      1|
+   17|      1|  return 0;
+   18|      1|}
+
+Wed Dec  9 15:07:21 PST 2020
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
