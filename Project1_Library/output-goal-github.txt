@@ -1,0 +1,549 @@
+2020-09-01T16:33:51.3053486Z ##[group]Run chmod 755 create-output.sh; ./create-output.sh
+2020-09-01T16:33:51.3053783Z [36;1mchmod 755 create-output.sh; ./create-output.sh[0m
+2020-09-01T16:33:51.3095639Z shell: /bin/bash -e {0}
+2020-09-01T16:33:51.3095852Z ##[endgroup]
+2020-09-01T16:33:52.2701143Z Tue Sep  1 16:33:51 UTC 2020
+2020-09-01T16:33:52.2705430Z Linux fv-az60 5.3.0-1035-azure #36-Ubuntu SMP Thu Aug 6 09:21:33 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+2020-09-01T16:33:52.2706060Z uid=1001(runner) gid=116(docker) groups=116(docker),4(adm),101(systemd-journal)
+2020-09-01T16:33:52.2706401Z =====================================================
+2020-09-01T16:33:52.2706698Z Running as a GitHub action, attempting to install programs
+2020-09-01T16:33:52.2706996Z =====================================================
+2020-09-01T16:33:58.2655215Z Reading package lists...
+2020-09-01T16:33:58.2658575Z Building dependency tree...
+2020-09-01T16:33:58.2660171Z Reading state information...
+2020-09-01T16:33:58.2662689Z The following additional packages will be installed:
+2020-09-01T16:33:58.2665254Z   clang-tidy-6.0 gdb gdbserver libbabeltrace1 libc6-dbg libipt1 llvm-runtime
+2020-09-01T16:33:58.2667173Z Suggested packages:
+2020-09-01T16:33:58.2669247Z   gdb-doc valgrind-dbg valgrind-mpi kcachegrind alleyoop valkyrie
+2020-09-01T16:33:58.3421896Z The following NEW packages will be installed:
+2020-09-01T16:33:58.3520193Z   clang-format clang-tidy clang-tidy-6.0 gdb gdbserver libbabeltrace1
+2020-09-01T16:33:58.3520965Z   libc6-dbg libipt1 llvm llvm-runtime valgrind
+2020-09-01T16:33:58.3713906Z 0 upgraded, 11 newly installed, 0 to remove and 16 not upgraded.
+2020-09-01T16:33:58.3716409Z Need to get 29.9 MB of archives.
+2020-09-01T16:33:58.3718494Z After this operation, 153 MB of additional disk space will be used.
+2020-09-01T16:33:58.3720569Z Get:1 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 clang-format amd64 1:6.0-41~exp5~ubuntu1 [3144 B]
+2020-09-01T16:33:58.3778694Z Get:2 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 clang-tidy-6.0 amd64 1:6.0-1ubuntu2 [6936 kB]
+2020-09-01T16:33:58.5253516Z Get:3 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu bionic/main amd64 gdb amd64 8.2-0ubuntu1~18.04 [3024 kB]
+2020-09-01T16:33:58.6376069Z Get:4 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 clang-tidy amd64 1:6.0-41~exp5~ubuntu1 [2984 B]
+2020-09-01T16:33:58.6379202Z Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libbabeltrace1 amd64 1.5.5-1 [154 kB]
+2020-09-01T16:33:58.6463757Z Get:6 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 libipt1 amd64 1.5-1ubuntu1 [28.6 kB]
+2020-09-01T16:33:58.6465634Z Get:7 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 llvm-runtime amd64 1:6.0-41~exp5~ubuntu1 [2856 B]
+2020-09-01T16:33:58.6483453Z Get:8 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 llvm amd64 1:6.0-41~exp5~ubuntu1 [3468 B]
+2020-09-01T16:33:58.6492528Z Get:9 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc6-dbg amd64 2.27-3ubuntu1.2 [5163 kB]
+2020-09-01T16:33:58.7106762Z Get:10 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 valgrind amd64 1:3.13.0-2ubuntu2.2 [14.3 MB]
+2020-09-01T16:33:59.3318724Z Get:11 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu bionic/main amd64 gdbserver amd64 8.2-0ubuntu1~18.04 [292 kB]
+2020-09-01T16:34:00.1485664Z Fetched 29.9 MB in 1s (22.2 MB/s)
+2020-09-01T16:34:00.1965367Z Selecting previously unselected package clang-format.
+2020-09-01T16:34:00.2169444Z (Reading database ... 
+2020-09-01T16:34:00.2171110Z (Reading database ... 5%
+2020-09-01T16:34:00.2171833Z (Reading database ... 10%
+2020-09-01T16:34:00.2172414Z (Reading database ... 15%
+2020-09-01T16:34:00.2173054Z (Reading database ... 20%
+2020-09-01T16:34:00.2173333Z (Reading database ... 25%
+2020-09-01T16:34:00.2173576Z (Reading database ... 30%
+2020-09-01T16:34:00.2173796Z (Reading database ... 35%
+2020-09-01T16:34:00.2173998Z (Reading database ... 40%
+2020-09-01T16:34:00.2174235Z (Reading database ... 45%
+2020-09-01T16:34:00.2174816Z (Reading database ... 50%
+2020-09-01T16:34:00.2425635Z (Reading database ... 55%
+2020-09-01T16:34:00.2774275Z (Reading database ... 60%
+2020-09-01T16:34:00.3065667Z (Reading database ... 65%
+2020-09-01T16:34:00.3665336Z (Reading database ... 70%
+2020-09-01T16:34:00.4463695Z (Reading database ... 75%
+2020-09-01T16:34:00.4970349Z (Reading database ... 80%
+2020-09-01T16:34:00.5434467Z (Reading database ... 85%
+2020-09-01T16:34:00.6005778Z (Reading database ... 90%
+2020-09-01T16:34:00.7148421Z (Reading database ... 95%
+2020-09-01T16:34:00.7148814Z (Reading database ... 100%
+2020-09-01T16:34:00.7149045Z (Reading database ... 269334 files and directories currently installed.)
+2020-09-01T16:34:00.7256355Z Preparing to unpack .../00-clang-format_1%3a6.0-41~exp5~ubuntu1_amd64.deb ...
+2020-09-01T16:34:00.7267655Z Unpacking clang-format (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:00.9847129Z Selecting previously unselected package clang-tidy-6.0.
+2020-09-01T16:34:01.0066826Z Preparing to unpack .../01-clang-tidy-6.0_1%3a6.0-1ubuntu2_amd64.deb ...
+2020-09-01T16:34:01.0077493Z Unpacking clang-tidy-6.0 (1:6.0-1ubuntu2) ...
+2020-09-01T16:34:02.1277655Z Selecting previously unselected package clang-tidy.
+2020-09-01T16:34:02.1500984Z Preparing to unpack .../02-clang-tidy_1%3a6.0-41~exp5~ubuntu1_amd64.deb ...
+2020-09-01T16:34:02.1516188Z Unpacking clang-tidy (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:02.2141545Z Selecting previously unselected package libbabeltrace1:amd64.
+2020-09-01T16:34:02.2307260Z Preparing to unpack .../03-libbabeltrace1_1.5.5-1_amd64.deb ...
+2020-09-01T16:34:02.2968421Z Unpacking libbabeltrace1:amd64 (1.5.5-1) ...
+2020-09-01T16:34:02.3374227Z Selecting previously unselected package libipt1.
+2020-09-01T16:34:02.3590960Z Preparing to unpack .../04-libipt1_1.5-1ubuntu1_amd64.deb ...
+2020-09-01T16:34:02.3601558Z Unpacking libipt1 (1.5-1ubuntu1) ...
+2020-09-01T16:34:02.3970549Z Selecting previously unselected package gdb.
+2020-09-01T16:34:02.4175969Z Preparing to unpack .../05-gdb_8.2-0ubuntu1~18.04_amd64.deb ...
+2020-09-01T16:34:02.4189527Z Unpacking gdb (8.2-0ubuntu1~18.04) ...
+2020-09-01T16:34:02.8333295Z Selecting previously unselected package gdbserver.
+2020-09-01T16:34:02.8556206Z Preparing to unpack .../06-gdbserver_8.2-0ubuntu1~18.04_amd64.deb ...
+2020-09-01T16:34:02.8563867Z Unpacking gdbserver (8.2-0ubuntu1~18.04) ...
+2020-09-01T16:34:02.9423763Z Selecting previously unselected package llvm-runtime.
+2020-09-01T16:34:02.9621779Z Preparing to unpack .../07-llvm-runtime_1%3a6.0-41~exp5~ubuntu1_amd64.deb ...
+2020-09-01T16:34:02.9637871Z Unpacking llvm-runtime (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:02.9869205Z Selecting previously unselected package llvm.
+2020-09-01T16:34:03.0088656Z Preparing to unpack .../08-llvm_1%3a6.0-41~exp5~ubuntu1_amd64.deb ...
+2020-09-01T16:34:03.0121498Z Unpacking llvm (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:03.1622405Z Selecting previously unselected package libc6-dbg:amd64.
+2020-09-01T16:34:03.1786635Z Preparing to unpack .../09-libc6-dbg_2.27-3ubuntu1.2_amd64.deb ...
+2020-09-01T16:34:03.1795400Z Unpacking libc6-dbg:amd64 (2.27-3ubuntu1.2) ...
+2020-09-01T16:34:04.0342279Z Selecting previously unselected package valgrind.
+2020-09-01T16:34:04.0518964Z Preparing to unpack .../10-valgrind_1%3a3.13.0-2ubuntu2.2_amd64.deb ...
+2020-09-01T16:34:04.1015037Z Unpacking valgrind (1:3.13.0-2ubuntu2.2) ...
+2020-09-01T16:34:05.5391310Z Setting up libc6-dbg:amd64 (2.27-3ubuntu1.2) ...
+2020-09-01T16:34:05.5424368Z Setting up clang-tidy-6.0 (1:6.0-1ubuntu2) ...
+2020-09-01T16:34:05.5453427Z Setting up llvm-runtime (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:05.5476760Z Setting up clang-format (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:05.5498234Z Setting up gdbserver (8.2-0ubuntu1~18.04) ...
+2020-09-01T16:34:05.5517511Z Setting up valgrind (1:3.13.0-2ubuntu2.2) ...
+2020-09-01T16:34:05.5570004Z Setting up libipt1 (1.5-1ubuntu1) ...
+2020-09-01T16:34:05.5593847Z Setting up libbabeltrace1:amd64 (1.5.5-1) ...
+2020-09-01T16:34:05.5615623Z Setting up clang-tidy (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:05.5635616Z Setting up llvm (1:6.0-41~exp5~ubuntu1) ...
+2020-09-01T16:34:05.5660612Z Setting up gdb (8.2-0ubuntu1~18.04) ...
+2020-09-01T16:34:05.5712396Z Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+2020-09-01T16:34:09.2008014Z Processing triggers for libc-bin (2.27-3ubuntu1.2) ...
+2020-09-01T16:34:11.0214236Z =====================================================
+2020-09-01T16:34:11.0225460Z 1. Compiles without warnings with -Wall -Wextra flags
+2020-09-01T16:34:11.0225717Z =====================================================
+2020-09-01T16:34:16.8793859Z =====================================================
+2020-09-01T16:34:16.8794856Z 2. Runs and produces correct output
+2020-09-01T16:34:16.8795517Z =====================================================
+2020-09-01T16:34:16.8807922Z test1 complete
+2020-09-01T16:34:16.8808500Z test2 complete
+2020-09-01T16:34:16.8809048Z test3 complete
+2020-09-01T16:34:16.8809529Z test4 complete
+2020-09-01T16:34:16.8817544Z *** Executing commands from test-1.txt
+2020-09-01T16:34:16.8817960Z Executing: size
+2020-09-01T16:34:16.8818173Z 0
+2020-09-01T16:34:16.8818378Z Executing: max_size
+2020-09-01T16:34:16.8818588Z 10
+2020-09-01T16:34:16.8818788Z Executing: empty
+2020-09-01T16:34:16.8818972Z 1
+2020-09-01T16:34:16.8819170Z Executing: print
+2020-09-01T16:34:16.8819393Z []
+2020-09-01T16:34:16.8819605Z Executing: push_back Ulysses
+2020-09-01T16:34:16.8820177Z Executing: size
+2020-09-01T16:34:16.8820394Z 1
+2020-09-01T16:34:16.8820634Z Executing: empty
+2020-09-01T16:34:16.8820834Z 0
+2020-09-01T16:34:16.8821036Z Executing: print
+2020-09-01T16:34:16.8821240Z [Ulysses]
+2020-09-01T16:34:16.8821448Z Executing: push_back Gatsby
+2020-09-01T16:34:16.8821660Z Executing: size
+2020-09-01T16:34:16.8821867Z 2
+2020-09-01T16:34:16.8822044Z Executing: front
+2020-09-01T16:34:16.8822245Z Ulysses
+2020-09-01T16:34:16.8822445Z Executing: back
+2020-09-01T16:34:16.8822644Z Gatsby
+2020-09-01T16:34:16.8822843Z Executing: print
+2020-09-01T16:34:16.8823043Z [Ulysses, Gatsby]
+2020-09-01T16:34:16.8823240Z Executing: erase 0
+2020-09-01T16:34:16.8823444Z Executing: front
+2020-09-01T16:34:16.8823643Z Gatsby
+2020-09-01T16:34:16.8823842Z Executing: back
+2020-09-01T16:34:16.8824044Z Gatsby
+2020-09-01T16:34:16.8824238Z Executing: print
+2020-09-01T16:34:16.8824435Z [Gatsby]
+2020-09-01T16:34:16.8824976Z *** Executing commands from test-2.txt
+2020-09-01T16:34:16.8825204Z Executing: push_back Ulysses
+2020-09-01T16:34:16.8825425Z Executing: push_back Gatsby
+2020-09-01T16:34:16.8825643Z Executing: push_back Harry Potter
+2020-09-01T16:34:16.8825863Z Executing: insertAt 0 Don Quixote
+2020-09-01T16:34:16.8826080Z Executing: print
+2020-09-01T16:34:16.8826301Z [Don Quixote, Ulysses, Gatsby, Harry Potter]
+2020-09-01T16:34:16.8826503Z Executing: erase 1
+2020-09-01T16:34:16.8826713Z Executing: print
+2020-09-01T16:34:16.8826923Z [Don Quixote, Gatsby, Harry Potter]
+2020-09-01T16:34:16.8827409Z *** Executing commands from test-3.txt
+2020-09-01T16:34:16.8827637Z Executing: push_back Dummy
+2020-09-01T16:34:16.8827857Z Executing: pop_back
+2020-09-01T16:34:16.8828065Z Executing: print
+2020-09-01T16:34:16.8828255Z []
+2020-09-01T16:34:16.8828464Z Invalid command: garbage_command
+2020-09-01T16:34:16.8828682Z Executing: pop_back
+2020-09-01T16:34:16.8828902Z Error: Cannot pop_back for empty Library
+2020-09-01T16:34:16.8829130Z Executing: front
+2020-09-01T16:34:16.8829344Z Error: Cannot access front for empty Library
+2020-09-01T16:34:16.8829559Z Dummy
+2020-09-01T16:34:16.8829744Z Executing: back
+2020-09-01T16:34:16.8829960Z Error: Cannot access back for empty Library
+2020-09-01T16:34:16.8830173Z Dummy
+2020-09-01T16:34:16.8830376Z Executing: erase 0
+2020-09-01T16:34:16.8830586Z Error: Cannot erase element at 0
+2020-09-01T16:34:16.8831059Z Executing: erase 3
+2020-09-01T16:34:16.8831273Z Error: Cannot erase element at 3
+2020-09-01T16:34:16.8831489Z Executing: insertAt 3 at 0
+2020-09-01T16:34:16.8831709Z Error: Cannot insert element at 3
+2020-09-01T16:34:16.8831904Z Executing: at 5
+2020-09-01T16:34:16.8832114Z Error: Cannot access element at 5
+2020-09-01T16:34:16.8832620Z Dummy
+2020-09-01T16:34:16.8832827Z Executing: push_back A0
+2020-09-01T16:34:16.8833041Z Executing: push_back A1
+2020-09-01T16:34:16.8833246Z Executing: push_back A2
+2020-09-01T16:34:16.8833450Z Executing: push_back A3
+2020-09-01T16:34:16.8833633Z Executing: push_back A4
+2020-09-01T16:34:16.8833967Z Executing: push_back A5
+2020-09-01T16:34:16.8834173Z Executing: push_back A6
+2020-09-01T16:34:16.8834374Z Executing: push_back A7
+2020-09-01T16:34:16.8834573Z Executing: push_back A8
+2020-09-01T16:34:16.8834785Z Executing: push_back A9
+2020-09-01T16:34:16.8834991Z Executing: push_back A10
+2020-09-01T16:34:16.8835200Z Error: Cannot add any more elements to Library
+2020-09-01T16:34:16.8835416Z Executing: print
+2020-09-01T16:34:16.8835632Z [A0, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+2020-09-01T16:34:16.8835841Z Done.
+2020-09-01T16:34:16.8836055Z =====================================================
+2020-09-01T16:34:16.8836599Z 3. clang-tidy warnings are fixed
+2020-09-01T16:34:16.8836843Z =====================================================
+2020-09-01T16:34:27.4536890Z 12830 warnings generated.
+2020-09-01T16:34:28.8847054Z 23962 warnings generated.
+2020-09-01T16:34:32.5948626Z 36844 warnings generated.
+2020-09-01T16:34:32.5956855Z Suppressed 36845 warnings (36844 in non-user code, 1 NOLINT).
+2020-09-01T16:34:32.5957793Z Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+2020-09-01T16:34:33.4928826Z =====================================================
+2020-09-01T16:34:33.4930087Z 4. clang-format does not find any formatting issues
+2020-09-01T16:34:33.4930325Z =====================================================
+2020-09-01T16:34:33.6660238Z Running clang-format on ./library-commands.cpp
+2020-09-01T16:34:33.6995014Z Running clang-format on ./library.cpp
+2020-09-01T16:34:33.7107951Z Running clang-format on ./main.cpp
+2020-09-01T16:34:33.7218718Z =====================================================
+2020-09-01T16:34:33.7219460Z 5. No memory leaks using g++
+2020-09-01T16:34:33.7220066Z =====================================================
+2020-09-01T16:34:34.9216042Z =====================================================
+2020-09-01T16:34:34.9216888Z 6. No memory leaks using valgrind, look for "definitely lost" 
+2020-09-01T16:34:34.9217136Z =====================================================
+2020-09-01T16:34:36.6061115Z ==3413== Memcheck, a memory error detector
+2020-09-01T16:34:36.6063044Z ==3413== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+2020-09-01T16:34:36.6063439Z ==3413== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+2020-09-01T16:34:36.6063747Z ==3413== Command: ./a.out test-1.txt test-2.txt test-3.txt
+2020-09-01T16:34:36.6063882Z ==3413== Parent PID: 2643
+2020-09-01T16:34:36.6064139Z ==3413== 
+2020-09-01T16:34:36.6064255Z ==3413== 
+2020-09-01T16:34:36.6064368Z ==3413== HEAP SUMMARY:
+2020-09-01T16:34:36.6064490Z ==3413==     in use at exit: 0 bytes in 0 blocks
+2020-09-01T16:34:36.6064633Z ==3413==   total heap usage: 13 allocs, 13 frees, 104,170 bytes allocated
+2020-09-01T16:34:36.6064759Z ==3413== 
+2020-09-01T16:34:36.6065052Z ==3413== All heap blocks were freed -- no leaks are possible
+2020-09-01T16:34:36.6065183Z ==3413== 
+2020-09-01T16:34:36.6065478Z ==3413== For counts of detected and suppressed errors, rerun with: -v
+2020-09-01T16:34:36.6065634Z ==3413== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+2020-09-01T16:34:36.6083338Z =====================================================
+2020-09-01T16:34:36.6083939Z 7. Tests have full code coverage
+2020-09-01T16:34:36.6084454Z =====================================================
+2020-09-01T16:34:51.0304813Z File '/home/runner/work/storage-solution/storage-solution/library-commands.cpp':
+2020-09-01T16:34:51.0305889Z Name                                                                         Regions    Miss   Cover     Lines    Miss   Cover
+2020-09-01T16:34:51.0307078Z ------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0308223Z _Z16execute_commandsRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE        42       0 100.00%        72       0 100.00%
+2020-09-01T16:34:51.0309302Z ------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0310127Z TOTAL                                                                             42       0 100.00%        72       0 100.00%
+2020-09-01T16:34:51.0310566Z 
+2020-09-01T16:34:51.0311461Z File '/home/runner/work/storage-solution/storage-solution/library.cpp':
+2020-09-01T16:34:51.0312089Z Name                                                                           Regions    Miss   Cover     Lines    Miss   Cover
+2020-09-01T16:34:51.0313128Z --------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0313766Z _ZlsRSoRK7Library                                                                    6       0 100.00%        11       0 100.00%
+2020-09-01T16:34:51.0315389Z _ZN7LibraryC2Ev                                                                      1       0 100.00%         1       0 100.00%
+2020-09-01T16:34:51.0315939Z _ZNK7Library4sizeEv                                                                  1       0 100.00%         1       0 100.00%
+2020-09-01T16:34:51.0316551Z _ZNK7Library8max_sizeEv                                                              1       0 100.00%         1       0 100.00%
+2020-09-01T16:34:51.0316980Z _ZNK7Library5emptyEv                                                                 1       0 100.00%         1       0 100.00%
+2020-09-01T16:34:51.0317402Z _ZNK7Library2atB5cxx11Ei                                                             6       0 100.00%         7       0 100.00%
+2020-09-01T16:34:51.0317817Z _ZNK7Library5frontB5cxx11Ev                                                          4       0 100.00%         7       0 100.00%
+2020-09-01T16:34:51.0318244Z _ZNK7Library4backB5cxx11Ev                                                           4       0 100.00%         7       0 100.00%
+2020-09-01T16:34:51.0318643Z _ZN7Library9push_backERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE         4       0 100.00%         8       0 100.00%
+2020-09-01T16:34:51.0319065Z _ZN7Library8pop_backEv                                                               4       0 100.00%         7       0 100.00%
+2020-09-01T16:34:51.0319479Z _ZN7Library5eraseEi                                                                  9       0 100.00%        10       0 100.00%
+2020-09-01T16:34:51.0319893Z _ZN7Library8insertAtEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE        11       0 100.00%        11       0 100.00%
+2020-09-01T16:34:51.0320874Z --------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0321323Z TOTAL                                                                               52       0 100.00%        72       0 100.00%
+2020-09-01T16:34:51.0321619Z 
+2020-09-01T16:34:51.0322287Z File '/home/runner/work/storage-solution/storage-solution/main.cpp':
+2020-09-01T16:34:51.0322739Z Name                                                                           Regions    Miss   Cover     Lines    Miss   Cover
+2020-09-01T16:34:51.0323593Z --------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0324025Z _Z5test1v                                                                            1       0 100.00%        10       0 100.00%
+2020-09-01T16:34:51.0324435Z _Z5test2v                                                                            1       0 100.00%        13       0 100.00%
+2020-09-01T16:34:51.0324840Z _Z5test3v                                                                            1       0 100.00%        19       0 100.00%
+2020-09-01T16:34:51.0325420Z _Z5test4v                                                                            1       0 100.00%        15       0 100.00%
+2020-09-01T16:34:51.0325821Z main                                                                                 6       0 100.00%        14       0 100.00%
+2020-09-01T16:34:51.0326758Z --------------------------------------------------------------------------------------------------------------------------------
+2020-09-01T16:34:51.0327187Z TOTAL                                                                               10       0 100.00%        71       0 100.00%
+2020-09-01T16:34:51.0413062Z /home/runner/work/storage-solution/storage-solution/library-commands.cpp:
+2020-09-01T16:34:51.0413691Z     1|       |// defines execute_commands for reading commands for library
+2020-09-01T16:34:51.0414063Z     2|       |
+2020-09-01T16:34:51.0414428Z     3|       |#include "library.h"
+2020-09-01T16:34:51.0414731Z     4|       |#include <cassert>
+2020-09-01T16:34:51.0415065Z     5|       |#include <fstream>
+2020-09-01T16:34:51.0415271Z     6|       |#include <iostream>
+2020-09-01T16:34:51.0415452Z     7|       |#include <sstream>
+2020-09-01T16:34:51.0415826Z     8|       |#include <stdexcept>
+2020-09-01T16:34:51.0416028Z     9|       |
+2020-09-01T16:34:51.0416225Z    10|       |using namespace std;
+2020-09-01T16:34:51.0416420Z    11|       |
+2020-09-01T16:34:51.0416627Z    12|      4|void execute_commands(const string &filename) {
+2020-09-01T16:34:51.0416830Z    13|      4|  ifstream ifs(filename);
+2020-09-01T16:34:51.0417029Z    14|      4|  if (!ifs.good()) {
+2020-09-01T16:34:51.0417232Z    15|      1|    cout << "Failed to open " << filename << endl;
+2020-09-01T16:34:51.0417443Z    16|      1|    return;
+2020-09-01T16:34:51.0417641Z    17|      1|  }
+2020-09-01T16:34:51.0417838Z    18|      3|  Library lib;
+2020-09-01T16:34:51.0418046Z    19|     53|  while (ifs.good()) {
+2020-09-01T16:34:51.0418244Z    20|     50|    string command;
+2020-09-01T16:34:51.0418449Z    21|     50|    ifs >> command;
+2020-09-01T16:34:51.0418648Z    22|     50|    // single word commands
+2020-09-01T16:34:51.0418849Z    23|     50|    if (command == "size") {
+2020-09-01T16:34:51.0419040Z    24|      3|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0419256Z    25|      3|      cout << lib.size() << endl;
+2020-09-01T16:34:51.0419463Z    26|     47|    } else if (command == "max_size") {
+2020-09-01T16:34:51.0419676Z    27|      1|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0420204Z    28|      1|      cout << lib.max_size() << endl;
+2020-09-01T16:34:51.0420551Z    29|     46|    } else if (command == "empty") {
+2020-09-01T16:34:51.0420780Z    30|      2|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0420996Z    31|      2|      cout << lib.empty() << endl;
+2020-09-01T16:34:51.0421204Z    32|     44|    } else if (command == "front") {
+2020-09-01T16:34:51.0421410Z    33|      3|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0421626Z    34|      3|      cout << lib.front() << endl;
+2020-09-01T16:34:51.0421832Z    35|     41|    } else if (command == "back") {
+2020-09-01T16:34:51.0422039Z    36|      3|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0422256Z    37|      3|      cout << lib.back() << endl;
+2020-09-01T16:34:51.0422446Z    38|     38|    } else if (command == "pop_back") {
+2020-09-01T16:34:51.0422655Z    39|      2|      // no output
+2020-09-01T16:34:51.0422867Z    40|      2|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0423072Z    41|      2|      lib.pop_back();
+2020-09-01T16:34:51.0423279Z    42|     36|    } else if (command == "print") {
+2020-09-01T16:34:51.0423490Z    43|      8|      // call insertion operator
+2020-09-01T16:34:51.0423900Z    44|      8|      cout << "Executing: " << command << endl;
+2020-09-01T16:34:51.0424137Z    45|      8|      cout << lib << endl;
+2020-09-01T16:34:51.0424552Z    46|     28|    } else if (command == "at") {
+2020-09-01T16:34:51.0424753Z    47|      1|      int num;
+2020-09-01T16:34:51.0424988Z    48|      1|      ifs >> num;
+2020-09-01T16:34:51.0425199Z    49|      1|      cout << "Executing: " << command << " " << num << endl;
+2020-09-01T16:34:51.0425434Z    50|      1|      cout << lib.at(num) << endl;
+2020-09-01T16:34:51.0425743Z    51|     27|    } else if (command == "push_back") {
+2020-09-01T16:34:51.0425968Z    52|     17|      // no output
+2020-09-01T16:34:51.0426188Z    53|     17|      string book;
+2020-09-01T16:34:51.0426408Z    54|     17|      // skip the space after num
+2020-09-01T16:34:51.0426628Z    55|     17|      ifs.ignore();
+2020-09-01T16:34:51.0426856Z    56|     17|      // read the whole line, not just up to the first space
+2020-09-01T16:34:51.0427074Z    57|     17|      getline(ifs, book);
+2020-09-01T16:34:51.0427303Z    58|     17|      cout << "Executing: " << command << " " << book << endl;
+2020-09-01T16:34:51.0427557Z    59|     17|      lib.push_back(book);
+2020-09-01T16:34:51.0427786Z    60|     17|    } else if (command == "erase") {
+2020-09-01T16:34:51.0427990Z    61|      4|      // no output
+2020-09-01T16:34:51.0428207Z    62|      4|      int num;
+2020-09-01T16:34:51.0428424Z    63|      4|      ifs >> num;
+2020-09-01T16:34:51.0428654Z    64|      4|      cout << "Executing: " << command << " " << num << endl;
+2020-09-01T16:34:51.0428892Z    65|      4|      lib.erase(num);
+2020-09-01T16:34:51.0429115Z    66|      6|    } else if (command == "insertAt") {
+2020-09-01T16:34:51.0429335Z    67|      2|      // no output
+2020-09-01T16:34:51.0429549Z    68|      2|      int num;
+2020-09-01T16:34:51.0429764Z    69|      2|      string book;
+2020-09-01T16:34:51.0429964Z    70|      2|      ifs >> num;
+2020-09-01T16:34:51.0430203Z    71|      2|      // skip the space after num
+2020-09-01T16:34:51.0430403Z    72|      2|      ifs.ignore();
+2020-09-01T16:34:51.0430635Z    73|      2|      getline(ifs, book);
+2020-09-01T16:34:51.0430863Z    74|      2|      cout << "Executing: " << command << " " << num << " " << book << endl;
+2020-09-01T16:34:51.0431109Z    75|      2|      lib.insertAt(num, book);
+2020-09-01T16:34:51.0431332Z    76|      4|    } else if (command.empty()) {
+2020-09-01T16:34:51.0431549Z    77|      3|      // skip
+2020-09-01T16:34:51.0431770Z    78|      3|    } else {
+2020-09-01T16:34:51.0431999Z    79|      1|      cout << "Invalid command: " << command << endl;
+2020-09-01T16:34:51.0432206Z    80|      1|    }
+2020-09-01T16:34:51.0432436Z    81|     50|  }
+2020-09-01T16:34:51.0432634Z    82|      3|  ifs.close();
+2020-09-01T16:34:51.0432866Z    83|      3|}
+2020-09-01T16:34:51.0433015Z 
+2020-09-01T16:34:51.0433535Z /home/runner/work/storage-solution/storage-solution/library.cpp:
+2020-09-01T16:34:51.0433781Z     1|       |
+2020-09-01T16:34:51.0433998Z     2|       |#include "library.h"
+2020-09-01T16:34:51.0434221Z     3|       |#include <iostream>
+2020-09-01T16:34:51.0434418Z     4|       |
+2020-09-01T16:34:51.0434632Z     5|       |using namespace std;
+2020-09-01T16:34:51.0434855Z     6|       |
+2020-09-01T16:34:51.0435076Z     7|     14|ostream &operator<<(ostream &out, const Library &lib) {
+2020-09-01T16:34:51.0435305Z     8|     14|  out << "[";
+2020-09-01T16:34:51.0436345Z     9|     14|  if (!lib.empty()) {
+2020-09-01T16:34:51.0437775Z    10|     11|    out << lib.at(0);
+2020-09-01T16:34:51.0437899Z    11|     11|  }
+2020-09-01T16:34:51.0438021Z    12|     35|  for (int i = 1; i < lib.size(); ++i) {
+2020-09-01T16:34:51.0438135Z    13|     21|    out << ", " << lib.at(i);
+2020-09-01T16:34:51.0438253Z    14|     21|  }
+2020-09-01T16:34:51.0438365Z    15|     14|  out << "]";
+2020-09-01T16:34:51.0438488Z    16|     14|  return out;
+2020-09-01T16:34:51.0438600Z    17|     14|}
+2020-09-01T16:34:51.0438714Z    18|       |
+2020-09-01T16:34:51.0438836Z    19|       |// Use the compiler generated constructor
+2020-09-01T16:34:51.0439529Z    20|      7|Library::Library() = default;
+2020-09-01T16:34:51.0439654Z    21|       |
+2020-09-01T16:34:51.0439891Z    22|       |// Return size
+2020-09-01T16:34:51.0440114Z    23|     42|int Library::size() const { return msize; }
+2020-09-01T16:34:51.0440239Z    24|       |
+2020-09-01T16:34:51.0440355Z    25|       |// Return maximum size
+2020-09-01T16:34:51.0440486Z    26|      1|int Library::max_size() const { return MAX; }
+2020-09-01T16:34:51.0440649Z    27|       |
+2020-09-01T16:34:51.0440769Z    28|       |// Test whether Library is empty
+2020-09-01T16:34:51.0440902Z    29|     18|bool Library::empty() const { return msize == 0; }
+2020-09-01T16:34:51.0441027Z    30|       |
+2020-09-01T16:34:51.0441138Z    31|       |// Access element
+2020-09-01T16:34:51.0441262Z    32|     36|const string &Library::at(int n) const {
+2020-09-01T16:34:51.0441388Z    33|     36|  if (n < 0 || n >= msize) {
+2020-09-01T16:34:51.0441516Z    34|      1|    cout << "Error: Cannot access element at " << to_string(n) << endl;
+2020-09-01T16:34:51.0441638Z    35|      1|    return Books[0];
+2020-09-01T16:34:51.0441753Z    36|      1|  }
+2020-09-01T16:34:51.0441874Z    37|     35|  return Books[n];
+2020-09-01T16:34:51.0441990Z    38|     35|}
+2020-09-01T16:34:51.0442102Z    39|       |
+2020-09-01T16:34:51.0442216Z    40|       |// Access first element
+2020-09-01T16:34:51.0442341Z    41|      6|const string &Library::front() const {
+2020-09-01T16:34:51.0442470Z    42|      6|  if (msize <= 0) {
+2020-09-01T16:34:51.0442584Z    43|      1|    cout << "Error: Cannot access front for empty Library" << endl;
+2020-09-01T16:34:51.0442716Z    44|      1|    return Books[0];
+2020-09-01T16:34:51.0442830Z    45|      1|  }
+2020-09-01T16:34:51.0442947Z    46|      5|  return Books[0];
+2020-09-01T16:34:51.0443060Z    47|      5|}
+2020-09-01T16:34:51.0443170Z    48|       |
+2020-09-01T16:34:51.0443289Z    49|       |// Access last element (public member function )
+2020-09-01T16:34:51.0443409Z    50|      6|const string &Library::back() const {
+2020-09-01T16:34:51.0443529Z    51|      6|  if (msize <= 0) {
+2020-09-01T16:34:51.0443658Z    52|      1|    cout << "Error: Cannot access back for empty Library" << endl;
+2020-09-01T16:34:51.0443799Z    53|      1|    return Books[0];
+2020-09-01T16:34:51.0443913Z    54|      1|  }
+2020-09-01T16:34:51.0444379Z    55|      5|  return Books[msize - 1];
+2020-09-01T16:34:51.0444502Z    56|      5|}
+2020-09-01T16:34:51.0444622Z    57|       |
+2020-09-01T16:34:51.0444723Z    58|       |// Add element at the end
+2020-09-01T16:34:51.0444860Z    59|     22|void Library::push_back(const string &book) {
+2020-09-01T16:34:51.0444990Z    60|     22|  if (msize >= MAX) {
+2020-09-01T16:34:51.0445120Z    61|      1|    cout << "Error: Cannot add any more elements to Library" << endl;
+2020-09-01T16:34:51.0445253Z    62|      1|    return;
+2020-09-01T16:34:51.0445369Z    63|      1|  }
+2020-09-01T16:34:51.0445489Z    64|     21|  Books[msize] = book;
+2020-09-01T16:34:51.0445588Z    65|     21|  ++msize;
+2020-09-01T16:34:51.0445704Z    66|     21|}
+2020-09-01T16:34:51.0445816Z    67|       |
+2020-09-01T16:34:51.0445930Z    68|       |// Delete last
+2020-09-01T16:34:51.0446057Z    69|      2|void Library::pop_back() {
+2020-09-01T16:34:51.0446176Z    70|      2|  if (msize <= 0) {
+2020-09-01T16:34:51.0446305Z    71|      1|    cout << "Error: Cannot pop_back for empty Library" << endl;
+2020-09-01T16:34:51.0446434Z    72|      1|    return;
+2020-09-01T16:34:51.0446537Z    73|      1|  }
+2020-09-01T16:34:51.0446777Z    74|      1|  --msize;
+2020-09-01T16:34:51.0446893Z    75|      1|}
+2020-09-01T16:34:51.0447003Z    76|       |
+2020-09-01T16:34:51.0447118Z    77|       |// Erase element at location
+2020-09-01T16:34:51.0447244Z    78|      6|void Library::erase(int n) {
+2020-09-01T16:34:51.0447360Z    79|      6|  if (n < 0 || n >= msize) {
+2020-09-01T16:34:51.0447470Z    80|      2|    cout << "Error: Cannot erase element at " << n << endl;
+2020-09-01T16:34:51.0447598Z    81|      2|    return;
+2020-09-01T16:34:51.0447712Z    82|      2|  }
+2020-09-01T16:34:51.0447946Z    83|      4|  --msize;
+2020-09-01T16:34:51.0448070Z    84|     10|  for (int i = n; i < msize; ++i) {
+2020-09-01T16:34:51.0448258Z    85|      6|    Books[i] = Books[i + 1];
+2020-09-01T16:34:51.0448372Z    86|      6|  }
+2020-09-01T16:34:51.0448468Z    87|      4|}
+2020-09-01T16:34:51.0448583Z    88|       |
+2020-09-01T16:34:51.0448708Z    89|       |// Insert element at location, moves other elements as needed
+2020-09-01T16:34:51.0448901Z    90|      4|void Library::insertAt(int n, const string &book) {
+2020-09-01T16:34:51.0449037Z    91|      4|  if (n < 0 || n > msize || msize == MAX) {
+2020-09-01T16:34:51.0449169Z    92|      1|    cout << "Error: Cannot insert element at " << n << endl;
+2020-09-01T16:34:51.0449296Z    93|      1|    return;
+2020-09-01T16:34:51.0449412Z    94|      1|  }
+2020-09-01T16:34:51.0449672Z    95|      9|  for (int i = msize; i > n; --i) {
+2020-09-01T16:34:51.0449937Z    96|      6|    Books[i] = Books[i - 1];
+2020-09-01T16:34:51.0450055Z    97|      6|  }
+2020-09-01T16:34:51.0450169Z    98|      3|  Books[n] = book;
+2020-09-01T16:34:51.0450291Z    99|      3|  ++msize;
+2020-09-01T16:34:51.0450405Z   100|      3|}
+2020-09-01T16:34:51.0450462Z 
+2020-09-01T16:34:51.0450733Z /home/runner/work/storage-solution/storage-solution/main.cpp:
+2020-09-01T16:34:51.0450856Z     1|       |
+2020-09-01T16:34:51.0450971Z     2|       |#include "library.h"
+2020-09-01T16:34:51.0451094Z     3|       |#include <cassert>
+2020-09-01T16:34:51.0451213Z     4|       |#include <fstream>
+2020-09-01T16:34:51.0451316Z     5|       |#include <iostream>
+2020-09-01T16:34:51.0451433Z     6|       |#include <sstream>
+2020-09-01T16:34:51.0451550Z     7|       |#include <stdexcept>
+2020-09-01T16:34:51.0451662Z     8|       |
+2020-09-01T16:34:51.0451774Z     9|       |using namespace std;
+2020-09-01T16:34:51.0451885Z    10|       |
+2020-09-01T16:34:51.0452173Z    11|       |// forward delaration, defined in library-commands.cpp
+2020-09-01T16:34:51.0452300Z    12|       |void execute_commands(const string &filename);
+2020-09-01T16:34:51.0452421Z    13|       |
+2020-09-01T16:34:51.0452538Z    14|      1|void test1() {
+2020-09-01T16:34:51.0452654Z    15|      1|  Library lib;
+2020-09-01T16:34:51.0452770Z    16|      1|  stringstream ss;
+2020-09-01T16:34:51.0453046Z    17|      1|  // NOLINTNEXTLINE - would normally use empty
+2020-09-01T16:34:51.0453176Z    18|      1|  assert(lib.size() == 0);
+2020-09-01T16:34:51.0453288Z    19|      1|  assert(lib.empty());
+2020-09-01T16:34:51.0453404Z    20|      1|  ss << lib;
+2020-09-01T16:34:51.0453572Z    21|      1|  assert(ss.str() == "[]");
+2020-09-01T16:34:51.0453700Z    22|      1|  cout << "test1 complete" << endl;
+2020-09-01T16:34:51.0453818Z    23|      1|}
+2020-09-01T16:34:51.0453931Z    24|       |
+2020-09-01T16:34:51.0454045Z    25|      1|void test2() {
+2020-09-01T16:34:51.0454146Z    26|      1|  Library lib;
+2020-09-01T16:34:51.0454265Z    27|      1|  stringstream ss;
+2020-09-01T16:34:51.0454384Z    28|      1|  lib.push_back("Ulysses");
+2020-09-01T16:34:51.0454506Z    29|      1|  assert(lib.size() == 1);
+2020-09-01T16:34:51.0454630Z    30|      1|  assert(!lib.empty());
+2020-09-01T16:34:51.0454759Z    31|      1|  assert(lib.at(0) == "Ulysses");
+2020-09-01T16:34:51.0454888Z    32|      1|  assert(lib.front() == lib.back());
+2020-09-01T16:34:51.0455009Z    33|      1|  ss.str("");
+2020-09-01T16:34:51.0455112Z    34|      1|  ss << lib;
+2020-09-01T16:34:51.0455240Z    35|      1|  assert(ss.str() == "[Ulysses]");
+2020-09-01T16:34:51.0455367Z    36|      1|  cout << "test2 complete" << endl;
+2020-09-01T16:34:51.0455485Z    37|      1|}
+2020-09-01T16:34:51.0455597Z    38|       |
+2020-09-01T16:34:51.0455710Z    39|      1|void test3() {
+2020-09-01T16:34:51.0455826Z    40|      1|  Library lib;
+2020-09-01T16:34:51.0455929Z    41|      1|  stringstream ss;
+2020-09-01T16:34:51.0456049Z    42|      1|  lib.push_back("Ulysses");
+2020-09-01T16:34:51.0456174Z    43|      1|  lib.push_back("Gatsby");
+2020-09-01T16:34:51.0456294Z    44|      1|  assert(lib.size() == 2);
+2020-09-01T16:34:51.0456414Z    45|      1|  assert(lib.at(0) == lib.front());
+2020-09-01T16:34:51.0456594Z    46|      1|  assert(lib.at(1) == lib.back());
+2020-09-01T16:34:51.0456712Z    47|      1|  ss.str("");
+2020-09-01T16:34:51.0456811Z    48|      1|  ss << lib;
+2020-09-01T16:34:51.0456934Z    49|      1|  assert(ss.str() == "[Ulysses, Gatsby]");
+2020-09-01T16:34:51.0457054Z    50|      1|
+2020-09-01T16:34:51.0457209Z    51|      1|  lib.erase(0);
+2020-09-01T16:34:51.0457331Z    52|      1|  assert(lib.front() == lib.back());
+2020-09-01T16:34:51.0457451Z    53|      1|  ss.str("");
+2020-09-01T16:34:51.0457567Z    54|      1|  ss << lib;
+2020-09-01T16:34:51.0457686Z    55|      1|  assert(ss.str() == "[Gatsby]");
+2020-09-01T16:34:51.0457795Z    56|      1|  cout << "test3 complete" << endl;
+2020-09-01T16:34:51.0457916Z    57|      1|}
+2020-09-01T16:34:51.0458025Z    58|       |
+2020-09-01T16:34:51.0458138Z    59|      1|void test4() {
+2020-09-01T16:34:51.0458252Z    60|      1|  Library lib;
+2020-09-01T16:34:51.0458370Z    61|      1|  stringstream ss;
+2020-09-01T16:34:51.0458488Z    62|      1|  lib.push_back("Ulysses");
+2020-09-01T16:34:51.0458599Z    63|      1|  lib.push_back("Gatsby");
+2020-09-01T16:34:51.0458724Z    64|      1|  lib.insertAt(lib.size(), "Harry Potter");
+2020-09-01T16:34:51.0458850Z    65|      1|  lib.insertAt(0, "Don Quixote");
+2020-09-01T16:34:51.0458968Z    66|      1|  ss << lib;
+2020-09-01T16:34:51.0459096Z    67|      1|  assert(ss.str() == "[Don Quixote, Ulysses, Gatsby, Harry Potter]");
+2020-09-01T16:34:51.0459230Z    68|      1|  lib.erase(1);
+2020-09-01T16:34:51.0459345Z    69|      1|  ss.str("");
+2020-09-01T16:34:51.0459459Z    70|      1|  ss << lib;
+2020-09-01T16:34:51.0459567Z    71|      1|  assert(ss.str() == "[Don Quixote, Gatsby, Harry Potter]");
+2020-09-01T16:34:51.0459700Z    72|      1|  cout << "test4 complete" << endl;
+2020-09-01T16:34:51.0459939Z    73|      1|}
+2020-09-01T16:34:51.0460054Z    74|       |
+2020-09-01T16:34:51.0460173Z    75|      1|int main(int argc, char *argv[]) {
+2020-09-01T16:34:51.0460294Z    76|      1|  test1();
+2020-09-01T16:34:51.0460414Z    77|      1|  test2();
+2020-09-01T16:34:51.0460512Z    78|      1|  test3();
+2020-09-01T16:34:51.0460628Z    79|      1|  test4();
+2020-09-01T16:34:51.0463658Z    80|      1|  if (argc >= 1) {
+2020-09-01T16:34:51.0496042Z    81|      5|    for (int i = 1; i < argc; ++i) {
+2020-09-01T16:34:51.0496182Z    82|      4|      string commandFile = argv[i];
+2020-09-01T16:34:51.0496317Z    83|      4|      cout << "*** Executing commands from " << commandFile << endl;
+2020-09-01T16:34:51.0496457Z    84|      4|      execute_commands(commandFile);
+2020-09-01T16:34:51.0496574Z    85|      4|    }
+2020-09-01T16:34:51.0496672Z    86|      1|  }
+2020-09-01T16:34:51.0496791Z    87|      1|  cout << "Done." << endl;
+2020-09-01T16:34:51.0496905Z    88|      1|}
+2020-09-01T16:34:51.0496977Z 
+2020-09-01T16:34:51.0497117Z Tue Sep  1 16:34:51 UTC 2020
+2020-09-01T16:34:51.0497242Z =====================================================
+2020-09-01T16:34:51.0497375Z To create an output.txt file with all the output from this script
+2020-09-01T16:34:51.0511075Z Run the below command
+2020-09-01T16:34:51.0511577Z       ./create-output.sh > output.txt 2>&1 
+2020-09-01T16:34:51.0511713Z =====================================================

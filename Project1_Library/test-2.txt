@@ -1,0 +1,8 @@
+push_back Ulysses
+push_back Gatsby
+push_back Harry Potter
+insertAt 0 Don Quixote
+print
+erase 1
+print
+

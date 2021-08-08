@@ -1,0 +1,20 @@
+size
+max_size
+empty
+print
+
+push_back Ulysses
+size
+empty
+print
+
+push_back Gatsby
+size
+front
+back
+print
+
+erase 0
+front
+back
+print

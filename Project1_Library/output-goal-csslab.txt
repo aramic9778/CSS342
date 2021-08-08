@@ -1,0 +1,449 @@
+Tue Sep  1 09:20:57 PDT 2020
+Linux csslab1.uwb.edu 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+uid=870540(pisan) gid=2120870540(pisan) groups=2120870540(pisan),579804(faculty)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+test1 complete
+test2 complete
+test3 complete
+test4 complete
+*** Executing commands from test-1.txt
+Executing: size
+0
+Executing: max_size
+10
+Executing: empty
+1
+Executing: print
+[]
+Executing: push_back Ulysses
+Executing: size
+1
+Executing: empty
+0
+Executing: print
+[Ulysses]
+Executing: push_back Gatsby
+Executing: size
+2
+Executing: front
+Ulysses
+Executing: back
+Gatsby
+Executing: print
+[Ulysses, Gatsby]
+Executing: erase 0
+Executing: front
+Gatsby
+Executing: back
+Gatsby
+Executing: print
+[Gatsby]
+*** Executing commands from test-2.txt
+Executing: push_back Ulysses
+Executing: push_back Gatsby
+Executing: push_back Harry Potter
+Executing: insertAt 0 Don Quixote
+Executing: print
+[Don Quixote, Ulysses, Gatsby, Harry Potter]
+Executing: erase 1
+Executing: print
+[Don Quixote, Gatsby, Harry Potter]
+*** Executing commands from test-3.txt
+Executing: push_back Dummy
+Executing: pop_back
+Executing: print
+[]
+Invalid command: garbage_command
+Executing: pop_back
+Error: Cannot pop_back for empty Library
+Executing: front
+Error: Cannot access front for empty Library
+Dummy
+Executing: back
+Error: Cannot access back for empty Library
+Dummy
+Executing: erase 0
+Error: Cannot erase element at 0
+Executing: erase 3
+Error: Cannot erase element at 3
+Executing: insertAt 3 at 0
+Error: Cannot insert element at 3
+Executing: at 5
+Error: Cannot access element at 5
+Dummy
+Executing: push_back A0
+Executing: push_back A1
+Executing: push_back A2
+Executing: push_back A3
+Executing: push_back A4
+Executing: push_back A5
+Executing: push_back A6
+Executing: push_back A7
+Executing: push_back A8
+Executing: push_back A9
+Executing: push_back A10
+Error: Cannot add any more elements to Library
+Executing: print
+[A0, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+Done.
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+12550 warnings generated.
+23442 warnings generated.
+36010 warnings generated.
+Suppressed 36011 warnings (36010 in non-user code, 1 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./library-commands.cpp
+Running clang-format on ./library.cpp
+Running clang-format on ./main.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==30230== Memcheck, a memory error detector
+==30230== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==30230== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==30230== Command: ./a.out test-1.txt test-2.txt test-3.txt
+==30230== Parent PID: 30146
+==30230== 
+==30230== 
+==30230== HEAP SUMMARY:
+==30230==     in use at exit: 0 bytes in 0 blocks
+==30230==   total heap usage: 12 allocs, 12 frees, 100,122 bytes allocated
+==30230== 
+==30230== All heap blocks were freed -- no leaks are possible
+==30230== 
+==30230== For lists of detected and suppressed errors, rerun with: -s
+==30230== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+File '/home/NETID/pisan/bitbucket/pisan342/storage-solution/library-commands.cpp':
+Name                                   Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------
+execute_commands(std::string const&)        42       0 100.00%        72       0 100.00%
+----------------------------------------------------------------------------------------
+TOTAL                                       42       0 100.00%        72       0 100.00%
+
+File '/home/NETID/pisan/bitbucket/pisan342/storage-solution/library.cpp':
+Name                                         Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------
+operator<<(std::ostream&, Library const&)          6       0 100.00%        11       0 100.00%
+Library::Library()                                 1       0 100.00%         1       0 100.00%
+Library::size() const                              1       0 100.00%         1       0 100.00%
+Library::max_size() const                          1       0 100.00%         1       0 100.00%
+Library::empty() const                             1       0 100.00%         1       0 100.00%
+Library::at(int) const                             6       0 100.00%         7       0 100.00%
+Library::front() const                             4       0 100.00%         7       0 100.00%
+Library::back() const                              4       0 100.00%         7       0 100.00%
+Library::push_back(std::string const&)             4       0 100.00%         8       0 100.00%
+Library::pop_back()                                4       0 100.00%         7       0 100.00%
+Library::erase(int)                                9       0 100.00%        10       0 100.00%
+Library::insertAt(int, std::string const&)        11       0 100.00%        11       0 100.00%
+----------------------------------------------------------------------------------------------
+TOTAL                                             52       0 100.00%        72       0 100.00%
+
+File '/home/NETID/pisan/bitbucket/pisan342/storage-solution/main.cpp':
+Name                                         Regions    Miss   Cover     Lines    Miss   Cover
+----------------------------------------------------------------------------------------------
+test1()                                            1       0 100.00%        10       0 100.00%
+test2()                                            1       0 100.00%        13       0 100.00%
+test3()                                            1       0 100.00%        19       0 100.00%
+test4()                                            1       0 100.00%        15       0 100.00%
+main                                               6       0 100.00%        14       0 100.00%
+----------------------------------------------------------------------------------------------
+TOTAL                                             10       0 100.00%        71       0 100.00%
+/home/NETID/pisan/bitbucket/pisan342/storage-solution/library-commands.cpp:
+    1|       |// defines execute_commands for reading commands for library
+    2|       |
+    3|       |#include "library.h"
+    4|       |#include <cassert>
+    5|       |#include <fstream>
+    6|       |#include <iostream>
+    7|       |#include <sstream>
+    8|       |#include <stdexcept>
+    9|       |
+   10|       |using namespace std;
+   11|       |
+   12|      4|void execute_commands(const string &filename) {
+   13|      4|  ifstream ifs(filename);
+   14|      4|  if (!ifs.good()) {
+   15|      1|    cout << "Failed to open " << filename << endl;
+   16|      1|    return;
+   17|      1|  }
+   18|      3|  Library lib;
+   19|     53|  while (ifs.good()) {
+   20|     50|    string command;
+   21|     50|    ifs >> command;
+   22|     50|    // single word commands
+   23|     50|    if (command == "size") {
+   24|      3|      cout << "Executing: " << command << endl;
+   25|      3|      cout << lib.size() << endl;
+   26|     47|    } else if (command == "max_size") {
+   27|      1|      cout << "Executing: " << command << endl;
+   28|      1|      cout << lib.max_size() << endl;
+   29|     46|    } else if (command == "empty") {
+   30|      2|      cout << "Executing: " << command << endl;
+   31|      2|      cout << lib.empty() << endl;
+   32|     44|    } else if (command == "front") {
+   33|      3|      cout << "Executing: " << command << endl;
+   34|      3|      cout << lib.front() << endl;
+   35|     41|    } else if (command == "back") {
+   36|      3|      cout << "Executing: " << command << endl;
+   37|      3|      cout << lib.back() << endl;
+   38|     38|    } else if (command == "pop_back") {
+   39|      2|      // no output
+   40|      2|      cout << "Executing: " << command << endl;
+   41|      2|      lib.pop_back();
+   42|     36|    } else if (command == "print") {
+   43|      8|      // call insertion operator
+   44|      8|      cout << "Executing: " << command << endl;
+   45|      8|      cout << lib << endl;
+   46|     28|    } else if (command == "at") {
+   47|      1|      int num;
+   48|      1|      ifs >> num;
+   49|      1|      cout << "Executing: " << command << " " << num << endl;
+   50|      1|      cout << lib.at(num) << endl;
+   51|     27|    } else if (command == "push_back") {
+   52|     17|      // no output
+   53|     17|      string book;
+   54|     17|      // skip the space after num
+   55|     17|      ifs.ignore();
+   56|     17|      // read the whole line, not just up to the first space
+   57|     17|      getline(ifs, book);
+   58|     17|      cout << "Executing: " << command << " " << book << endl;
+   59|     17|      lib.push_back(book);
+   60|     17|    } else if (command == "erase") {
+   61|      4|      // no output
+   62|      4|      int num;
+   63|      4|      ifs >> num;
+   64|      4|      cout << "Executing: " << command << " " << num << endl;
+   65|      4|      lib.erase(num);
+   66|      6|    } else if (command == "insertAt") {
+   67|      2|      // no output
+   68|      2|      int num;
+   69|      2|      string book;
+   70|      2|      ifs >> num;
+   71|      2|      // skip the space after num
+   72|      2|      ifs.ignore();
+   73|      2|      getline(ifs, book);
+   74|      2|      cout << "Executing: " << command << " " << num << " " << book << endl;
+   75|      2|      lib.insertAt(num, book);
+   76|      4|    } else if (command.empty()) {
+   77|      3|      // skip
+   78|      3|    } else {
+   79|      1|      cout << "Invalid command: " << command << endl;
+   80|      1|    }
+   81|     50|  }
+   82|      3|  ifs.close();
+   83|      3|}
+
+/home/NETID/pisan/bitbucket/pisan342/storage-solution/library.cpp:
+    1|       |
+    2|       |#include "library.h"
+    3|       |#include <iostream>
+    4|       |
+    5|       |using namespace std;
+    6|       |
+    7|     14|ostream &operator<<(ostream &out, const Library &lib) {
+    8|     14|  out << "[";
+    9|     14|  if (!lib.empty()) {
+   10|     11|    out << lib.at(0);
+   11|     11|  }
+   12|     35|  for (int i = 1; i < lib.size(); ++i) {
+   13|     21|    out << ", " << lib.at(i);
+   14|     21|  }
+   15|     14|  out << "]";
+   16|     14|  return out;
+   17|     14|}
+   18|       |
+   19|       |// Use the compiler generated constructor
+   20|      7|Library::Library() = default;
+   21|       |
+   22|       |// Return size
+   23|     42|int Library::size() const { return msize; }
+   24|       |
+   25|       |// Return maximum size
+   26|      1|int Library::max_size() const { return MAX; }
+   27|       |
+   28|       |// Test whether Library is empty
+   29|     18|bool Library::empty() const { return msize == 0; }
+   30|       |
+   31|       |// Access element
+   32|     36|const string &Library::at(int n) const {
+   33|     36|  if (n < 0 || n >= msize) {
+   34|      1|    cout << "Error: Cannot access element at " << to_string(n) << endl;
+   35|      1|    return Books[0];
+   36|      1|  }
+   37|     35|  return Books[n];
+   38|     35|}
+   39|       |
+   40|       |// Access first element
+   41|      6|const string &Library::front() const {
+   42|      6|  if (msize <= 0) {
+   43|      1|    cout << "Error: Cannot access front for empty Library" << endl;
+   44|      1|    return Books[0];
+   45|      1|  }
+   46|      5|  return Books[0];
+   47|      5|}
+   48|       |
+   49|       |// Access last element (public member function )
+   50|      6|const string &Library::back() const {
+   51|      6|  if (msize <= 0) {
+   52|      1|    cout << "Error: Cannot access back for empty Library" << endl;
+   53|      1|    return Books[0];
+   54|      1|  }
+   55|      5|  return Books[msize - 1];
+   56|      5|}
+   57|       |
+   58|       |// Add element at the end
+   59|     22|void Library::push_back(const string &book) {
+   60|     22|  if (msize >= MAX) {
+   61|      1|    cout << "Error: Cannot add any more elements to Library" << endl;
+   62|      1|    return;
+   63|      1|  }
+   64|     21|  Books[msize] = book;
+   65|     21|  ++msize;
+   66|     21|}
+   67|       |
+   68|       |// Delete last
+   69|      2|void Library::pop_back() {
+   70|      2|  if (msize <= 0) {
+   71|      1|    cout << "Error: Cannot pop_back for empty Library" << endl;
+   72|      1|    return;
+   73|      1|  }
+   74|      1|  --msize;
+   75|      1|}
+   76|       |
+   77|       |// Erase element at location
+   78|      6|void Library::erase(int n) {
+   79|      6|  if (n < 0 || n >= msize) {
+   80|      2|    cout << "Error: Cannot erase element at " << n << endl;
+   81|      2|    return;
+   82|      2|  }
+   83|      4|  --msize;
+   84|     10|  for (int i = n; i < msize; ++i) {
+   85|      6|    Books[i] = Books[i + 1];
+   86|      6|  }
+   87|      4|}
+   88|       |
+   89|       |// Insert element at location, moves other elements as needed
+   90|      4|void Library::insertAt(int n, const string &book) {
+   91|      4|  if (n < 0 || n > msize || msize == MAX) {
+   92|      1|    cout << "Error: Cannot insert element at " << n << endl;
+   93|      1|    return;
+   94|      1|  }
+   95|      9|  for (int i = msize; i > n; --i) {
+   96|      6|    Books[i] = Books[i - 1];
+   97|      6|  }
+   98|      3|  Books[n] = book;
+   99|      3|  ++msize;
+  100|      3|}
+
+/home/NETID/pisan/bitbucket/pisan342/storage-solution/main.cpp:
+    1|       |
+    2|       |#include "library.h"
+    3|       |#include <cassert>
+    4|       |#include <fstream>
+    5|       |#include <iostream>
+    6|       |#include <sstream>
+    7|       |#include <stdexcept>
+    8|       |
+    9|       |using namespace std;
+   10|       |
+   11|       |// forward delaration, defined in library-commands.cpp
+   12|       |void execute_commands(const string &filename);
+   13|       |
+   14|      1|void test1() {
+   15|      1|  Library lib;
+   16|      1|  stringstream ss;
+   17|      1|  // NOLINTNEXTLINE - would normally use empty
+   18|      1|  assert(lib.size() == 0);
+   19|      1|  assert(lib.empty());
+   20|      1|  ss << lib;
+   21|      1|  assert(ss.str() == "[]");
+   22|      1|  cout << "test1 complete" << endl;
+   23|      1|}
+   24|       |
+   25|      1|void test2() {
+   26|      1|  Library lib;
+   27|      1|  stringstream ss;
+   28|      1|  lib.push_back("Ulysses");
+   29|      1|  assert(lib.size() == 1);
+   30|      1|  assert(!lib.empty());
+   31|      1|  assert(lib.at(0) == "Ulysses");
+   32|      1|  assert(lib.front() == lib.back());
+   33|      1|  ss.str("");
+   34|      1|  ss << lib;
+   35|      1|  assert(ss.str() == "[Ulysses]");
+   36|      1|  cout << "test2 complete" << endl;
+   37|      1|}
+   38|       |
+   39|      1|void test3() {
+   40|      1|  Library lib;
+   41|      1|  stringstream ss;
+   42|      1|  lib.push_back("Ulysses");
+   43|      1|  lib.push_back("Gatsby");
+   44|      1|  assert(lib.size() == 2);
+   45|      1|  assert(lib.at(0) == lib.front());
+   46|      1|  assert(lib.at(1) == lib.back());
+   47|      1|  ss.str("");
+   48|      1|  ss << lib;
+   49|      1|  assert(ss.str() == "[Ulysses, Gatsby]");
+   50|      1|
+   51|      1|  lib.erase(0);
+   52|      1|  assert(lib.front() == lib.back());
+   53|      1|  ss.str("");
+   54|      1|  ss << lib;
+   55|      1|  assert(ss.str() == "[Gatsby]");
+   56|      1|  cout << "test3 complete" << endl;
+   57|      1|}
+   58|       |
+   59|      1|void test4() {
+   60|      1|  Library lib;
+   61|      1|  stringstream ss;
+   62|      1|  lib.push_back("Ulysses");
+   63|      1|  lib.push_back("Gatsby");
+   64|      1|  lib.insertAt(lib.size(), "Harry Potter");
+   65|      1|  lib.insertAt(0, "Don Quixote");
+   66|      1|  ss << lib;
+   67|      1|  assert(ss.str() == "[Don Quixote, Ulysses, Gatsby, Harry Potter]");
+   68|      1|  lib.erase(1);
+   69|      1|  ss.str("");
+   70|      1|  ss << lib;
+   71|      1|  assert(ss.str() == "[Don Quixote, Gatsby, Harry Potter]");
+   72|      1|  cout << "test4 complete" << endl;
+   73|      1|}
+   74|       |
+   75|      1|int main(int argc, char *argv[]) {
+   76|      1|  test1();
+   77|      1|  test2();
+   78|      1|  test3();
+   79|      1|  test4();
+   80|      1|  if (argc >= 1) {
+   81|      5|    for (int i = 1; i < argc; ++i) {
+   82|      4|      string commandFile = argv[i];
+   83|      4|      cout << "*** Executing commands from " << commandFile << endl;
+   84|      4|      execute_commands(commandFile);
+   85|      4|    }
+   86|      1|  }
+   87|      1|  cout << "Done." << endl;
+   88|      1|}
+
+Tue Sep  1 09:21:16 PDT 2020
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================

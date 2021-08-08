@@ -1,0 +1,26 @@
+push_back Dummy
+pop_back
+print
+garbage_command
+pop_back
+front
+back
+erase 0
+erase 3
+insertAt 3
+at 0
+at 5
+push_back A0
+push_back A1
+push_back A2
+push_back A3
+push_back A4
+push_back A5
+push_back A6
+push_back A7
+push_back A8
+push_back A9
+push_back A10
+print
+
+
