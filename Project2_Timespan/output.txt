@@ -1,0 +1,346 @@
+Sun Oct 25 17:33:34 PDT 2020
+Linux csslab11.uwb.edu 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+uid=1109936(aram97) gid=2121109936(aram97) groups=2121109936(aram97),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+test1 complete
+test2 complete
+test3 complete
+test4 complete
+Done.
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+11349 warnings generated.
+22229 warnings generated.
+Suppressed 22229 warnings (22229 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./main.cpp
+Running clang-format on ./timespan.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==13193== Memcheck, a memory error detector
+==13193== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==13193== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==13193== Command: ./a.out
+==13193== Parent PID: 13155
+==13193== 
+==13193== 
+==13193== HEAP SUMMARY:
+==13193==     in use at exit: 0 bytes in 0 blocks
+==13193==   total heap usage: 1 allocs, 1 frees, 72,704 bytes allocated
+==13193== 
+==13193== All heap blocks were freed -- no leaks are possible
+==13193== 
+==13193== For lists of detected and suppressed errors, rerun with: -s
+==13193== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+File '/home/NETID/aram97/2020au342c-p2-timespan-aramic9778/main.cpp':
+Name                        Regions    Miss   Cover     Lines    Miss   Cover
+-----------------------------------------------------------------------------
+test1()                           1       0 100.00%        22       0 100.00%
+test2()                           1       0 100.00%        21       0 100.00%
+test3()                           1       0 100.00%        10       0 100.00%
+test4()                           1       0 100.00%        23       0 100.00%
+main                              1       0 100.00%         8       0 100.00%
+-----------------------------------------------------------------------------
+TOTAL                             5       0 100.00%        84       0 100.00%
+
+File '/home/NETID/aram97/2020au342c-p2-timespan-aramic9778/timespan.cpp':
+Name                                          Regions    Miss   Cover     Lines    Miss   Cover
+-----------------------------------------------------------------------------------------------
+operator<<(std::ostream&, TimeSpan const&)         15       0 100.00%        19       0 100.00%
+TimeSpan::TimeSpan(double, double, double)          3       0 100.00%        14       0 100.00%
+TimeSpan::getHour() const                           1       0 100.00%         1       0 100.00%
+TimeSpan::getMinute() const                         1       0 100.00%         1       0 100.00%
+TimeSpan::getSecond() const                         1       0 100.00%         1       0 100.00%
+TimeSpan::isPositive() const                        1       0 100.00%         3       0 100.00%
+TimeSpan::operator+(TimeSpan const&) const          1       0 100.00%        10       0 100.00%
+TimeSpan::operator+=(TimeSpan const&)               1       0 100.00%        11       0 100.00%
+TimeSpan::operator-=(TimeSpan const&)               1       0 100.00%        11       0 100.00%
+TimeSpan::operator-(TimeSpan const&) const          1       0 100.00%        12       0 100.00%
+TimeSpan::operator*(unsigned int) const             1       0 100.00%        12       0 100.00%
+TimeSpan::operator==(TimeSpan const&) const         5       0 100.00%         5       0 100.00%
+TimeSpan::operator<(TimeSpan const&) const          1       0 100.00%         3       0 100.00%
+TimeSpan::operator<=(TimeSpan const&) const         1       0 100.00%         3       0 100.00%
+TimeSpan::operator>(TimeSpan const&) const          1       0 100.00%         3       0 100.00%
+TimeSpan::operator>=(TimeSpan const&) const         1       0 100.00%         3       0 100.00%
+TimeSpan::operator!=(TimeSpan const&) const         5       0 100.00%         5       0 100.00%
+-----------------------------------------------------------------------------------------------
+TOTAL                                              41       0 100.00%       117       0 100.00%
+/home/NETID/aram97/2020au342c-p2-timespan-aramic9778/main.cpp:
+    1|       |#include <cassert>
+    2|       |#include <iostream>
+    3|       |#include <sstream>
+    4|       |
+    5|       |#include "timespan.h"
+    6|       |
+    7|       |using namespace std;
+    8|       |
+    9|       |// testing constructor
+   10|      1|void test1() {
+   11|      1|  TimeSpan ts(1, 20, 30);
+   12|      1|  stringstream ss;
+   13|      1|  ss << ts;
+   14|      1|  assert(ss.str() == "1:20:30");
+   15|      1|
+   16|      1|  TimeSpan ts2(4, -20, -90);
+   17|      1|  ss.str("");
+   18|      1|  ss << ts2;
+   19|      1|  assert(ss.str() == "3:38:30");
+   20|      1|
+   21|      1|  TimeSpan ts3(1.5, 30.5, -90);
+   22|      1|  ss.str("");
+   23|      1|  ss << ts3;
+   24|      1|  assert(ss.str() == "1:59:00");
+   25|      1|
+   26|      1|  TimeSpan ts4(0, 0.07, 0);
+   27|      1|  ss.str("");
+   28|      1|  ss << ts4;
+   29|      1|  assert(ss.str() == "0:00:04");
+   30|      1|  cout << "test1 complete" << endl;
+   31|      1|}
+   32|       |
+   33|       |// testing equality, addition, subtraction, multiplication
+   34|      1|void test2() {
+   35|      1|  TimeSpan ts(1, 20, 30);
+   36|      1|  TimeSpan ts2(1, 20, 30);
+   37|      1|  TimeSpan ts3(0, 0, 0);
+   38|      1|  TimeSpan ts4(2, 40, 15);
+   39|      1|  TimeSpan ts5(2, 40, 15);
+   40|      1|  TimeSpan ts7(-1, 19, 45); // ts7 for negative subtract
+   41|      1|  TimeSpan tss;
+   42|      1|  tss = ts2 - ts4;
+   43|      1|  assert((ts2 - ts4) == ts7); // new test
+   44|      1|  assert(ts == ts2);
+   45|      1|  assert(!(ts != ts2));
+   46|      1|  assert(ts != ts3);
+   47|      1|  assert((ts + ts + ts) == (ts2 * 3));
+   48|      1|  assert((ts * 5) == (ts2 * 4) + ts2);
+   49|      1|  assert((ts * 5) == (ts2 * 6) - ts2);
+   50|      1|  assert((ts + ts - ts) == ((ts2 * 2) - ts));
+   51|      1|  assert((ts - ts2) == ts3);
+   52|      1|  assert((ts3 * 5) == ts3);
+   53|      1|  cout << "test2 complete" << endl;
+   54|      1|}
+   55|       |
+   56|      1|void test3() {
+   57|      1|  TimeSpan ts0(0, 0, 0);
+   58|      1|  TimeSpan ts1(0, 0, 10);
+   59|      1|  TimeSpan ts2 = ts0 - ts1;
+   60|      1|  assert(ts1.isPositive() && !ts2.isPositive());
+   61|      1|  stringstream ss;
+   62|      1|  ss << ts2;
+   63|      1|  assert(ss.str() == "-0:00:10");
+   64|      1|  cout << "test3 complete" << endl;
+   65|      1|}
+   66|       |
+   67|      1|void test4() { // new tests for > < >= <= += and -= operators
+   68|      1|  TimeSpan ts(1, 20, 30);
+   69|      1|  TimeSpan ts2(1, 20, 30);
+   70|      1|  TimeSpan ts3(3, 5, 7);
+   71|      1|  TimeSpan tss;
+   72|      1|  TimeSpan ts4(2, 41, 0);
+   73|      1|  TimeSpan ts5(4, 25, 37);
+   74|      1|  TimeSpan ts6(1, 44, 37);
+   75|      1|  TimeSpan ts7(-1, 44, 37);
+   76|      1|  assert(!(ts < ts2));
+   77|      1|  assert(ts <= ts2);
+   78|      1|  assert(ts < ts3);
+   79|      1|  assert(ts <= ts3);
+   80|      1|  assert(!(ts > ts3));
+   81|      1|  assert(ts >= ts2);
+   82|      1|  ts += ts2;
+   83|      1|  assert(ts == ts4);
+   84|      1|  ts5 -= ts4;
+   85|      1|  assert(ts5 == ts6);
+   86|      1|  ts2 -= ts3;
+   87|      1|  assert(ts2 == ts7);
+   88|      1|  cout << "test4 complete" << endl;
+   89|      1|}
+   90|       |
+   91|      1|int main() {
+   92|      1|  test1();
+   93|      1|  test2();
+   94|      1|  test3();
+   95|      1|  test4();
+   96|      1|  cout << "Done." << std::endl;
+   97|      1|  return 0;
+   98|      1|}
+
+/home/NETID/aram97/2020au342c-p2-timespan-aramic9778/timespan.cpp:
+    1|       |//
+    2|       |// Created by Yusuf Pisan on 4/2/18.
+    3|       |//
+    4|       |
+    5|       |#include "timespan.h"
+    6|       |
+    7|      5|ostream &operator<<(ostream &out, const TimeSpan &ts) {
+    8|      5|  if (!ts.isPositive() && (ts.h == 0)) {
+    9|      1|    // adding a '-' if hour equal zero and timespan is not positive
+   10|      1|    out << "-";
+   11|      1|  }
+   12|      5|  if ((ts.m < 10) && (ts.m > (-1))) {
+   13|      2|    // for 0 to 10 adding extra 0 before minute digit
+   14|      2|    out << ts.h << ":0" << abs(ts.m);
+   15|      3|  } else {
+   16|      3|    out << ts.h << ":" << abs(ts.m);
+   17|      3|  }
+   18|      5|  if ((ts.sec < 10) && (ts.sec > (-1))) {
+   19|      2|    // for 0 to 10 adding extra 0 before second digit
+   20|      2|    out << ":0" << abs(ts.sec);
+   21|      3|  } else {
+   22|      3|    out << ":" << abs(ts.sec);
+   23|      3|  }
+   24|      5|  return out;
+   25|      5|}
+   26|       |
+   27|       |// explicit TimeSpan(int Hour = 0, int Minute = 0, int Second = 0);
+   28|     39|TimeSpan::TimeSpan(double hour, double minute, double second) {
+   29|     39|  totalsec = int((abs(hour) * 3600 + minute * 60 + second));
+   30|     39|  // total seconds for object
+   31|     39|  h = int(totalsec / 3600);
+   32|     39|  // hours
+   33|     39|  m = int((totalsec - h * 3600) / 60);
+   34|     39|  // minutes
+   35|     39|  sec = int(totalsec - h * 3600 - m * 60);
+   36|     39|  // seconds
+   37|     39|  if (hour < 0) {
+   38|      2|    // if parameter hour < 0 making it negative
+   39|      2|    h = -h;
+   40|      2|  }
+   41|     39|}
+   42|       |
+   43|       |// hour component
+   44|     26|double TimeSpan::getHour() const { return h; } // return hours
+   45|       |
+   46|       |// minute component
+   47|     24|double TimeSpan::getMinute() const { return m; } // return minutes
+   48|       |
+   49|       |// second component
+   50|     24|double TimeSpan::getSecond() const { return sec; } // return seconds
+   51|       |
+   52|       |// true if timespan is 0 or larger
+   53|      7|bool TimeSpan::isPositive() const {
+   54|      7|  return (totalsec > 0);
+   55|      7|} // return bool value to check if object positive
+   56|       |
+   57|       |// add
+   58|      4|TimeSpan TimeSpan::operator+(const TimeSpan &ts) const {
+   59|      4|  TimeSpan tsSum;
+   60|      4|  tsSum.totalsec = (this->totalsec) + ts.totalsec;
+   61|      4|  tsSum.h = int(tsSum.totalsec / 3600);
+   62|      4|  tsSum.m = int((tsSum.totalsec - tsSum.h * 3600) / 60);
+   63|      4|  tsSum.sec = tsSum.totalsec - tsSum.h * 3600 - tsSum.m * 60;
+   64|      4|  tsSum.m = abs(tsSum.m);
+   65|      4|  tsSum.sec = abs(tsSum.sec);
+   66|      4|  return tsSum;
+   67|      4|}
+   68|       |
+   69|       |// add equal
+   70|      1|TimeSpan &TimeSpan::operator+=(const TimeSpan &ts) {
+   71|      1|  this->totalsec = this->totalsec + ts.totalsec;
+   72|      1|  this->h = int(this->totalsec / 3600);
+   73|      1|  this->m = int((this->totalsec - this->h * 3600) / 60);
+   74|      1|  this->sec = this->totalsec - this->h * 3600 - this->m * 60;
+   75|      1|  // making minutes positive for using == and != properly
+   76|      1|  this->m = abs(this->m);
+   77|      1|  // making seconds positive for using == and != properly
+   78|      1|  this->sec = abs(this->sec);
+   79|      1|  return *this;
+   80|      1|}
+   81|       |
+   82|       |// subtract equal
+   83|      2|TimeSpan &TimeSpan::operator-=(const TimeSpan &ts) {
+   84|      2|  this->totalsec = this->totalsec - ts.totalsec;
+   85|      2|  this->h = int(this->totalsec / 3600);
+   86|      2|  this->m = int((this->totalsec - this->h * 3600) / 60);
+   87|      2|  this->sec = this->totalsec - this->h * 3600 - this->m * 60;
+   88|      2|  // making minutes positive for using == and != properly
+   89|      2|  this->m = abs(this->m);
+   90|      2|  // making seconds positive for using == and != properly
+   91|      2|  this->sec = abs(this->sec);
+   92|      2|  return *this;
+   93|      2|}
+   94|       |
+   95|       |// subtract
+   96|      7|TimeSpan TimeSpan::operator-(const TimeSpan &ts) const {
+   97|      7|  TimeSpan tsSub;
+   98|      7|  tsSub.totalsec = this->totalsec - ts.totalsec;
+   99|      7|  tsSub.h = int(tsSub.totalsec / 3600);
+  100|      7|  tsSub.m = int((tsSub.totalsec - tsSub.h * 3600) / 60);
+  101|      7|  tsSub.sec = tsSub.totalsec - tsSub.h * 3600 - tsSub.m * 60;
+  102|      7|  // making minutes positive for using == and != properly
+  103|      7|  tsSub.m = abs(tsSub.m);
+  104|      7|  // making seconds positive for using == and != properly
+  105|      7|  tsSub.sec = abs(tsSub.sec);
+  106|      7|  return tsSub;
+  107|      7|}
+  108|       |
+  109|       |// multiply with an integer
+  110|      7|TimeSpan TimeSpan::operator*(unsigned int number) const {
+  111|      7|  TimeSpan tsLarge;
+  112|      7|  tsLarge.totalsec = (this->totalsec) * number;
+  113|      7|  tsLarge.h = int(tsLarge.totalsec / 3600);
+  114|      7|  tsLarge.m = int((tsLarge.totalsec - tsLarge.h * 3600) / 60);
+  115|      7|  tsLarge.sec = tsLarge.totalsec - tsLarge.h * 3600 - tsLarge.m * 60;
+  116|      7|  // making minutes positive for using == and != properly
+  117|      7|  tsLarge.m = abs(tsLarge.m);
+  118|      7|  // making seconds positive for using == and != properly
+  119|      7|  tsLarge.sec = abs(tsLarge.sec);
+  120|      7|  return tsLarge;
+  121|      7|}
+  122|       |
+  123|       |// equality ==
+  124|     11|bool TimeSpan::operator==(const TimeSpan &ts) const {
+  125|     11|  return ((this->getHour() == ts.getHour()) &&
+  126|     11|          (this->getMinute() == ts.getMinute()) &&
+  127|     11|          (this->getSecond() == ts.getSecond()));
+  128|     11|}
+  129|       |
+  130|       |// less
+  131|      2|bool TimeSpan::operator<(const TimeSpan &ts) const {
+  132|      2|  return (this->totalsec < ts.totalsec);
+  133|      2|}
+  134|       |
+  135|       |// less or equal
+  136|      2|bool TimeSpan::operator<=(const TimeSpan &ts) const {
+  137|      2|  return (this->totalsec <= ts.totalsec);
+  138|      2|}
+  139|       |
+  140|       |// more
+  141|      1|bool TimeSpan::operator>(const TimeSpan &ts) const {
+  142|      1|  return (this->totalsec > ts.totalsec);
+  143|      1|}
+  144|       |
+  145|       |// more or equal
+  146|      1|bool TimeSpan::operator>=(const TimeSpan &ts) const {
+  147|      1|  return (this->totalsec >= ts.totalsec);
+  148|      1|}
+  149|       |
+  150|       |// inequality !=
+  151|      2|bool TimeSpan::operator!=(const TimeSpan &ts) const {
+  152|      2|  return !((this->getHour() == ts.getHour()) &&
+  153|      2|           (this->getMinute() == ts.getMinute()) &&
+  154|      2|           (this->getSecond() == ts.getSecond()));
+  155|      2|}
+
+Sun Oct 25 17:33:42 PDT 2020
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
